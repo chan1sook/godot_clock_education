@@ -4,8 +4,8 @@ extends Node
 ### Global constant
 
 const VERSION_SEQ = 1
-const VERSION_STR = "0.0.1"
-const UNLIMITED_TIME_FLAG = false
+var VERSION_STR = ProjectSettings.get_setting("application/config/version", "0.0.1")
+const UNLIMITED_TIME_FLAG = true
 
 ### Global variables
 

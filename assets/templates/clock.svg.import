@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v0yyoncbe5ko"
-path="res://.godot/imported/sun_icon.svg-504343a9ad12935773291ed34006b908.ctex"
+uid="uid://e20vei0swnbs"
+path="res://.godot/imported/clock.svg-0b9eccd08a6b60ca12077e84a0539de4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sun_icon.svg"
-dest_files=["res://.godot/imported/sun_icon.svg-504343a9ad12935773291ed34006b908.ctex"]
+source_file="res://assets/templates/clock.svg"
+dest_files=["res://.godot/imported/clock.svg-0b9eccd08a6b60ca12077e84a0539de4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e20vei0swnbs"
-path="res://.godot/imported/clock.svg-d1a2dcd81249eb880a2c93496bd9626b.ctex"
+uid="uid://c88m6b0ao7xru"
+path="res://.godot/imported/chevron_down.svg-5a85c4a8a9c1c4d26e1205de6267953c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/templates/clock.svg"
-dest_files=["res://.godot/imported/clock.svg-d1a2dcd81249eb880a2c93496bd9626b.ctex"]
+source_file="res://assets/templates/chevron_down.svg"
+dest_files=["res://.godot/imported/chevron_down.svg-5a85c4a8a9c1c4d26e1205de6267953c.ctex"]
 
 [params]
 

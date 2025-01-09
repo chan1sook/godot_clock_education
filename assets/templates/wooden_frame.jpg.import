@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4o5snktddgro"
-path="res://.godot/imported/clock_tower.png-e062f6b6a06b9e5d09e01d92034f1f2b.ctex"
+uid="uid://p6jra88v3cs"
+path="res://.godot/imported/wooden_frame.jpg-1502a0adf9ac952ac5716c58ba300798.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/templates/clock_tower.png"
-dest_files=["res://.godot/imported/clock_tower.png-e062f6b6a06b9e5d09e01d92034f1f2b.ctex"]
+source_file="res://assets/templates/wooden_frame.jpg"
+dest_files=["res://.godot/imported/wooden_frame.jpg-1502a0adf9ac952ac5716c58ba300798.ctex"]
 
 [params]
 

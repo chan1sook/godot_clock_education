@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p6jra88v3cs"
-path="res://.godot/imported/wooden_frame.jpg-40e5d9818401119bfe3a866dad8896db.ctex"
+uid="uid://dj54tgh7ts0ua"
+path="res://.godot/imported/logo.png-e2220799298e3631eb0e245316e0501a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/templates/wooden_frame.jpg"
-dest_files=["res://.godot/imported/wooden_frame.jpg-40e5d9818401119bfe3a866dad8896db.ctex"]
+source_file="res://assets/logo.png"
+dest_files=["res://.godot/imported/logo.png-e2220799298e3631eb0e245316e0501a.ctex"]
 
 [params]
 
