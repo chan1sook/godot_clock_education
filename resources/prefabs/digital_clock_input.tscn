@@ -1,0 +1,195 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0d1gmgn30uwf"]
+
+[ext_resource type="Texture2D" uid="uid://cuouphflrqay3" path="res://assets/images/chevron_down_32x32.png" id="1_4no5x"]
+[ext_resource type="Script" path="res://resources/prefabs/digital_clock_input.gd" id="1_x40rv"]
+[ext_resource type="FontFile" uid="uid://diej0aman8wi8" path="res://assets/fonts/Itim-Regular.ttf" id="2_c4413"]
+[ext_resource type="Script" path="res://resources/clock_time_resource.gd" id="2_q8b43"]
+[ext_resource type="Theme" uid="uid://qg5eamh6spsa" path="res://resources/digital_clock_theme.tres" id="3_w2pkh"]
+
+[sub_resource type="Resource" id="Resource_f4sgd"]
+script = ExtResource("2_q8b43")
+hour = 0
+minute = 0
+
+[node name="DigitalClockInput" type="HBoxContainer"]
+offset_right = 270.0
+offset_bottom = 128.0
+alignment = 1
+script = ExtResource("1_x40rv")
+clock_time = SubResource("Resource_f4sgd")
+
+[node name="HourInput" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="UpInput" type="HBoxContainer" parent="HourInput"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="MinusHourButton" type="Button" parent="HourInput/UpInput"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2pkh")
+
+[node name="TextureRect" type="TextureRect" parent="HourInput/UpInput/MinusHourButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4no5x")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HourInput"]
+layout_mode = 2
+theme = ExtResource("3_w2pkh")
+
+[node name="HourLabel" type="Label" parent="HourInput/PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_c4413")
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DownInput" type="HBoxContainer" parent="HourInput"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="AddHourButton" type="Button" parent="HourInput/DownInput"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2pkh")
+
+[node name="TextureRect" type="TextureRect" parent="HourInput/DownInput/AddHourButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4no5x")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_c4413")
+theme_override_font_sizes/font_size = 48
+text = ":"
+
+[node name="MinuteInput" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="UpInputs" type="HBoxContainer" parent="MinuteInput"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="MinusTenMinuteButton" type="Button" parent="MinuteInput/UpInputs"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2pkh")
+
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/UpInputs/MinusTenMinuteButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4no5x")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="MinusMinuteButton" type="Button" parent="MinuteInput/UpInputs"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2pkh")
+
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/UpInputs/MinusMinuteButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4no5x")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MinuteInput"]
+layout_mode = 2
+theme = ExtResource("3_w2pkh")
+
+[node name="MinuteLabel" type="Label" parent="MinuteInput/PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_c4413")
+theme_override_font_sizes/font_size = 60
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DownInputs" type="HBoxContainer" parent="MinuteInput"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="AddTenMinuteButton" type="Button" parent="MinuteInput/DownInputs"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2pkh")
+
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/DownInputs/AddTenMinuteButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4no5x")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="AddMinuteButton" type="Button" parent="MinuteInput/DownInputs"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2pkh")
+
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/DownInputs/AddMinuteButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4no5x")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="HourInput/UpInput/MinusHourButton" to="." method="_on_minus_hour_button_pressed"]
+[connection signal="pressed" from="HourInput/DownInput/AddHourButton" to="." method="_on_add_hour_button_pressed"]
+[connection signal="pressed" from="MinuteInput/UpInputs/MinusTenMinuteButton" to="." method="_on_minus_ten_minute_button_pressed"]
+[connection signal="pressed" from="MinuteInput/UpInputs/MinusMinuteButton" to="." method="_on_minus_minute_button_pressed"]
+[connection signal="pressed" from="MinuteInput/DownInputs/AddTenMinuteButton" to="." method="_on_add_ten_minute_button_pressed"]
+[connection signal="pressed" from="MinuteInput/DownInputs/AddMinuteButton" to="." method="_on_add_minute_button_pressed"]

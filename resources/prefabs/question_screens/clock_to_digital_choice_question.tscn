@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://m01dmrn2c0fo"]
+
+[ext_resource type="Script" path="res://resources/prefabs/question_screens/clock_to_digital_choice_question.gd" id="1_0p022"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="2_hcrdt"]
+[ext_resource type="Script" path="res://resources/clock_time_resource.gd" id="3_86jk6"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_4aj0v"]
+
+[sub_resource type="Resource" id="Resource_cvvhq"]
+script = ExtResource("3_86jk6")
+hour = 0
+minute = 0
+
+[node name="ClockToDigitalChoiceQuestion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0p022")
+
+[node name="Clock" parent="." instance=ExtResource("2_hcrdt")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 116.0
+offset_top = 176.0
+offset_right = 516.0
+offset_bottom = 576.0
+scale = Vector2(0.759999, 0.759999)
+clock_time = SubResource("Resource_cvvhq")
+interactable = false
+
+[node name="AnswerButtonVContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = 192.0
+offset_right = 460.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ButtonA" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("4_4aj0v")
+theme_override_font_sizes/font_size = 36
+text = "ก. 11:22"
+
+[node name="ButtonB" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("4_4aj0v")
+theme_override_font_sizes/font_size = 36
+text = "ข. 11:22"
+
+[node name="ButtonC" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("4_4aj0v")
+theme_override_font_sizes/font_size = 36
+text = "ค. 11:22"
+
+[node name="ButtonD" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("4_4aj0v")
+theme_override_font_sizes/font_size = 36
+text = "ง. 11:22"
+
+[node name="QuestionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 113.0
+offset_right = 973.0
+offset_bottom = 157.0
+theme = ExtResource("4_4aj0v")
+theme_override_font_sizes/font_size = 36
+text = "เวลาในหน้าปัดตรงกับข้อใด"
+
+[connection signal="pressed" from="AnswerButtonVContainer/ButtonA" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="AnswerButtonVContainer/ButtonB" to="." method="_on_button_b_pressed"]
+[connection signal="pressed" from="AnswerButtonVContainer/ButtonC" to="." method="_on_button_c_pressed"]
+[connection signal="pressed" from="AnswerButtonVContainer/ButtonD" to="." method="_on_button_d_pressed"]

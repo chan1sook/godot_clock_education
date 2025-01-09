@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://cw302jisen0x5"]
+
+[ext_resource type="Texture2D" uid="uid://d3xrnnbpah5ix" path="res://assets/images/clock_tower/clock_tower_2.png" id="1_ehad2"]
+[ext_resource type="Script" path="res://resources/prefabs/clock_tower.gd" id="2_5fxnf"]
+[ext_resource type="Texture2D" uid="uid://blmcdfqaii4we" path="res://assets/images/clock_tower/clock_tower_hand.svg" id="2_83mki"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="4_ajphn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kx7qe"]
+radius = 26.6971
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eitu2"]
+size = Vector2(21.6065, 242.922)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8i752"]
+radius = 26.6835
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j0oj"]
+size = Vector2(21.6066, 194.459)
+
+[node name="ClockTower" type="Sprite2D"]
+position = Vector2(216, 236)
+scale = Vector2(0.185129, 0.185129)
+texture = ExtResource("1_ehad2")
+script = ExtResource("2_5fxnf")
+
+[node name="Clock" parent="." instance=ExtResource("4_ajphn")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1303.5
+offset_top = -4079.5
+offset_right = -520.5
+offset_bottom = -3296.5
+grow_horizontal = 2
+grow_vertical = 2
+interactable = false
+
+[node name="Background" parent="Clock" index="0"]
+visible = false
+
+[node name="ClockLabelContainer" parent="Clock" index="1"]
+visible = false
+
+[node name="MinuteHand" parent="Clock/MinuteHand/Pivot" index="0"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -11.0
+offset_top = -316.0
+offset_right = 10.0
+texture = ExtResource("2_83mki")
+
+[node name="MinuteHandArea2D" parent="Clock/MinuteHand/Pivot" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="Clock/MinuteHand/Pivot/MinuteHandArea2D" index="0"]
+position = Vector2(0, -308.246)
+shape = SubResource("CircleShape2D_kx7qe")
+
+[node name="CollisionShape2D2" parent="Clock/MinuteHand/Pivot/MinuteHandArea2D" index="1"]
+position = Vector2(-0.401611, -194.383)
+shape = SubResource("RectangleShape2D_eitu2")
+
+[node name="HourHand" parent="Clock/HourHand/Pivot" index="0"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -11.0
+offset_top = -175.0
+offset_right = 10.0
+texture = ExtResource("2_83mki")
+
+[node name="HourHandArea2D" parent="Clock/HourHand/Pivot" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="Clock/HourHand/Pivot/HourHandArea2D" index="0"]
+position = Vector2(0, -166.623)
+shape = SubResource("CircleShape2D_8i752")
+
+[node name="CollisionShape2D2" parent="Clock/HourHand/Pivot/HourHandArea2D" index="1"]
+position = Vector2(-0.401611, -78.1721)
+shape = SubResource("RectangleShape2D_4j0oj")
+
+[editable path="Clock"]

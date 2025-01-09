@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxg4ibvdyperd"]
+
+[ext_resource type="Script" path="res://scenes/test_end_scene.gd" id="1_pgn5s"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_0yu1k"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_q8cad"]
+
+[node name="TestEndScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pgn5s")
+
+[node name="Background" parent="." instance=ExtResource("2_0yu1k")]
+layout_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 101.0
+offset_right = 972.0
+offset_bottom = 358.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("4_q8cad")
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 92)
+layout_mode = 2
+theme = ExtResource("4_q8cad")
+theme_override_font_sizes/font_size = 48
+text = "จบการทดสอบ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("4_q8cad")
+theme_override_font_sizes/font_size = 64
+text = "30/30"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 440.0
+offset_right = 886.0
+offset_bottom = 492.0
+theme = ExtResource("4_q8cad")
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_q8cad")
+theme_override_font_sizes/font_size = 36
+text = "เริ่มใหม่"
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_q8cad")
+theme_override_font_sizes/font_size = 36
+text = "เมนูหลัก"
+
+[connection signal="pressed" from="HBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

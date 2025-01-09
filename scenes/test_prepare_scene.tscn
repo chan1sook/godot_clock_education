@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcrf16uoxqig2"]
+
+[ext_resource type="Script" path="res://scenes/test_prepare_scene.gd" id="1_bxibo"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_y5hrn"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="3_880pq"]
+
+[node name="TestPrepare" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bxibo")
+
+[node name="Background" parent="." instance=ExtResource("2_y5hrn")]
+layout_mode = 1
+
+[node name="StartButton" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+offset_left = 426.0
+offset_top = 298.0
+offset_right = 726.0
+offset_bottom = 350.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_880pq")
+theme_override_font_sizes/font_size = 36
+text = "เริ่มแบบทดสอบ"
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 166.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_880pq")
+theme_type_variation = &"PurpleButton"
+theme_override_font_sizes/font_size = 32
+text = "ย้อนกลับ"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

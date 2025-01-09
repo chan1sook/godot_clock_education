@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 211.66666 211.66667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="clock_mark_1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.0129245"
+     inkscape:cx="337.1426"
+     inkscape:cy="487.20314"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <sodipodi:guide
+       position="105.83333,153.6704"
+       orientation="-1,0"
+       id="guide250"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="52.916666,105.83333"
+       orientation="0,1"
+       id="guide252"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1175"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       d="M 105.82572 23.949913 L 105.83549 14.406626 " />
+    <path
+       id="path1823"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       d="M 105.64774 198.3693 L 105.65831 187.99795 " />
+    <path
+       id="path1821"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       d="M 187.61173 106.47152 L 197.72294 106.48181 " />
+    <path
+       id="path1815"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       d="M 13.760262 106.29419 L 23.589868 106.30418 " />
+  </g>
+</svg>

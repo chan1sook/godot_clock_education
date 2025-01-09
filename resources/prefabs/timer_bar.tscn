@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://curw8v7qrspij"]
+
+[ext_resource type="Theme" uid="uid://pky4d42l828g" path="res://resources/timer_theme.tres" id="1_fxcj2"]
+[ext_resource type="Script" path="res://resources/prefabs/timer_bar.gd" id="2_nyamj"]
+
+[node name="TimerBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 30.0
+script = ExtResource("2_nyamj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -14.5
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("1_fxcj2")
+text = "3:00"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_fxcj2")
+value = 50.0
+show_percentage = false
+
+[node name="QuestionTimer" type="Timer" parent="."]
+wait_time = 30.0
+
+[connection signal="timeout" from="QuestionTimer" to="HBoxContainer/ProgressBar" method="_on_question_timer_timeout"]

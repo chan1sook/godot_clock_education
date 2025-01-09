@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmifc4rj4ddqn"]
+
+[ext_resource type="Script" path="res://resources/prefabs/question_screens/clock_to_digital_question.gd" id="1_o8ucu"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="2_0rlmo"]
+[ext_resource type="Script" path="res://resources/clock_time_resource.gd" id="3_18gcs"]
+[ext_resource type="PackedScene" uid="uid://c0d1gmgn30uwf" path="res://resources/prefabs/digital_clock_input.tscn" id="4_pwj1d"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="6_tiqyq"]
+
+[sub_resource type="Resource" id="Resource_swrio"]
+script = ExtResource("3_18gcs")
+hour = 0
+minute = 0
+
+[sub_resource type="Resource" id="Resource_6ii5r"]
+script = ExtResource("3_18gcs")
+hour = 8
+minute = 0
+
+[node name="ClockToDigitalQuestion" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 66.0
+offset_top = 59.0
+offset_right = 1082.0
+offset_bottom = 615.0
+mouse_filter = 1
+script = ExtResource("1_o8ucu")
+
+[node name="QuestionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 91.0
+offset_right = 904.0
+offset_bottom = 136.0
+theme = ExtResource("6_tiqyq")
+theme_override_font_sizes/font_size = 36
+text = "จงปรับเวลาให้ตรงกัน"
+horizontal_alignment = 1
+
+[node name="Clock" parent="." instance=ExtResource("2_0rlmo")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 106.0
+offset_top = 99.0
+offset_right = 526.0
+offset_bottom = 499.0
+scale = Vector2(0.840001, 0.840001)
+clock_time = SubResource("Resource_swrio")
+interactable = false
+
+[node name="DigitalClockInput" parent="." instance=ExtResource("4_pwj1d")]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 187.0
+offset_right = 861.0
+offset_bottom = 315.0
+clock_time = SubResource("Resource_6ii5r")
+
+[node name="AnswerButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 348.0
+offset_right = 868.0
+offset_bottom = 400.0
+theme = ExtResource("6_tiqyq")
+theme_override_font_sizes/font_size = 36
+text = "ส่งคำตอบ"
+
+[connection signal="pressed" from="AnswerButton" to="." method="_on_answer_button_pressed"]

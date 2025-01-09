@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj41w4m3hr2qc"]
+
+[ext_resource type="Script" path="res://resources/prefabs/question_screens/digital_to_clock_question.gd" id="1_3ehnr"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="1_wq0if"]
+[ext_resource type="Script" path="res://resources/clock_time_resource.gd" id="3_8fq6i"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="5_3mkvq"]
+
+[sub_resource type="Resource" id="Resource_evwp3"]
+script = ExtResource("3_8fq6i")
+hour = 8
+minute = 0
+
+[node name="DigitalToClockQuestion" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 55.0
+offset_top = 58.0
+offset_right = 1099.0
+offset_bottom = 620.0
+mouse_filter = 1
+script = ExtResource("1_3ehnr")
+
+[node name="Clock" parent="." instance=ExtResource("1_wq0if")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 576.0
+offset_top = 33.0
+offset_right = 976.0
+offset_bottom = 433.0
+scale = Vector2(0.96, 0.96)
+clock_time = SubResource("Resource_evwp3")
+
+[node name="QuestionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 168.0
+offset_right = 407.0
+offset_bottom = 213.0
+theme = ExtResource("5_3mkvq")
+theme_override_font_sizes/font_size = 36
+text = "จงตั้งเวลาให้ตรง"
+
+[node name="QuestionTimeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 237.0
+offset_right = 358.0
+offset_bottom = 314.0
+theme = ExtResource("5_3mkvq")
+theme_override_font_sizes/font_size = 64
+text = "12:00"
+
+[node name="AnswerButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 447.0
+offset_right = 882.0
+offset_bottom = 499.0
+theme = ExtResource("5_3mkvq")
+theme_override_font_sizes/font_size = 36
+text = "ส่งคำตอบ"
+
+[connection signal="pressed" from="AnswerButton" to="." method="_on_answer_button_pressed"]

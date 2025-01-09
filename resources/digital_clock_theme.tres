@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://qg5eamh6spsa"]
+
+[ext_resource type="FontFile" uid="uid://diej0aman8wi8" path="res://assets/fonts/Itim-Regular.ttf" id="1_cxwbp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g8q2"]
+bg_color = Color(0.493546, 0.493545, 0.493546, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.219501, 0.219501, 0.219501, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f15cy"]
+bg_color = Color(0.4, 0.4, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.219501, 0.219501, 0.219501, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo8ku"]
+bg_color = Color(0.493546, 0.493545, 0.493546, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.219501, 0.219501, 0.219501, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlrma"]
+bg_color = Color(0.4, 0.4, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.219501, 0.219501, 0.219501, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[resource]
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_1g8q2")
+Button/styles/normal = SubResource("StyleBoxFlat_f15cy")
+Button/styles/pressed = SubResource("StyleBoxFlat_uo8ku")
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_cxwbp")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_xlrma")

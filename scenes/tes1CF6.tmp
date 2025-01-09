@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgm16veadk1vy"]
+
+[ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_a43es"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/menu_theme.tres" id="1_aonw2"]
+[ext_resource type="Theme" uid="uid://b4sjk76ld1e4a" path="res://resources/test_theme.tres" id="3_r6owv"]
+[ext_resource type="PackedScene" uid="uid://m01dmrn2c0fo" path="res://resources/prefabs/question_screens/clock_to_digital_choice_question.tscn" id="4_jtr7r"]
+[ext_resource type="PackedScene" uid="uid://q6ypupt2b4s7" path="res://resources/prefabs/question_screens/digital_to_clock_choice_question.tscn" id="5_hk5yu"]
+[ext_resource type="PackedScene" uid="uid://bmifc4rj4ddqn" path="res://resources/prefabs/question_screens/clock_to_digital_question.tscn" id="6_06peb"]
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a43es")
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 166.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_aonw2")
+theme_override_font_sizes/font_size = 32
+text = "ย้อนกลับ"
+
+[node name="NumberLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 98.0
+offset_right = 179.0
+offset_bottom = 142.0
+theme = ExtResource("3_r6owv")
+theme_override_font_sizes/font_size = 36
+text = "1/30"
+
+[node name="TimerBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 609.0
+offset_right = 1126.0
+offset_bottom = 636.0
+show_percentage = false
+
+[node name="QuestionTimer" type="Timer" parent="TimerBar"]
+wait_time = 30.0
+
+[node name="ClockToDigitalChoiceQuestion" parent="." instance=ExtResource("4_jtr7r")]
+visible = false
+layout_mode = 1
+
+[node name="DigitalToClockChoiceQuestion" parent="." instance=ExtResource("5_hk5yu")]
+visible = false
+layout_mode = 1
+
+[node name="ClockToDigitalQuestion" parent="." instance=ExtResource("6_06peb")]
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="TimerBar/QuestionTimer" to="." method="_on_question_timer_timeout"]
+[connection signal="choose_answer_result" from="ClockToDigitalChoiceQuestion" to="." method="_on_choose_answer_result"]
+[connection signal="choose_answer_result" from="DigitalToClockChoiceQuestion" to="." method="_on_choose_answer_result"]
+[connection signal="choose_answer_result" from="ClockToDigitalQuestion" to="." method="_on_choose_answer_result"]

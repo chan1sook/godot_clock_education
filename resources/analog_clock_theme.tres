@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bg1j27wsan63b"]
+
+[ext_resource type="FontFile" uid="uid://diej0aman8wi8" path="res://assets/fonts/Itim-Regular.ttf" id="1_h31nv"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_h31nv")
+LineEdit/font_sizes/font_size = 48
+LineEdit/fonts/font = ExtResource("1_h31nv")

@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdpjjmd0vuiy1"]
+
+[ext_resource type="Script" path="res://scripts/clock_playground.gd" id="1_7iul6"]
+[ext_resource type="Texture2D" uid="uid://e20vei0swnbs" path="res://assets/images/clock_empty.svg" id="1_ighxb"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/menu_theme.tres" id="2_64u0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f4af"]
+size = Vector2(10, 160)
+
+[node name="ClockPlayground" type="Control" node_paths=PackedStringArray("hour_hand", "minute_hand")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_7iul6")
+clock_hours = 3
+clock_minutes = 8
+hour_hand = NodePath("VBoxContainer/Clock/HourMarker")
+minute_hand = NodePath("VBoxContainer/Clock/MinuteMarker")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 89.0
+offset_right = 477.0
+offset_bottom = 560.0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Clock" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("1_ighxb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MinuteMarker" type="Marker2D" parent="VBoxContainer/Clock"]
+position = Vector2(200, 200)
+gizmo_extents = 200.0
+
+[node name="MinuteHand" type="ColorRect" parent="VBoxContainer/Clock/MinuteMarker"]
+offset_left = -5.0
+offset_top = -150.0
+offset_right = 5.0
+offset_bottom = 10.0
+pivot_offset = Vector2(5, 150)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MinuteHandArea2D" type="Area2D" parent="VBoxContainer/Clock/MinuteMarker"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Clock/MinuteMarker/MinuteHandArea2D"]
+position = Vector2(0, -70)
+shape = SubResource("RectangleShape2D_6f4af")
+
+[node name="HourMarker" type="Marker2D" parent="VBoxContainer/Clock"]
+position = Vector2(200, 200)
+gizmo_extents = 200.0
+
+[node name="HourHand" type="ColorRect" parent="VBoxContainer/Clock/HourMarker"]
+offset_left = -5.0
+offset_top = -80.0
+offset_right = 5.0
+offset_bottom = 10.0
+pivot_offset = Vector2(5, 80)
+color = Color(1, 0, 0, 1)
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_64u0i")
+theme_override_font_sizes/font_size = 32
+text = "Day/Night"
+
+[connection signal="input_event" from="VBoxContainer/Clock/MinuteMarker/MinuteHandArea2D" to="." method="_on_minute_hand_area_2d_input_event"]

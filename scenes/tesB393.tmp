@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgm16veadk1vy"]
+
+[ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_a43es"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/menu_theme.tres" id="1_aonw2"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="3_ivy0s"]
+[ext_resource type="Theme" uid="uid://b4sjk76ld1e4a" path="res://resources/test_theme.tres" id="3_r6owv"]
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a43es")
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 166.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_aonw2")
+theme_override_font_sizes/font_size = 32
+text = "ย้อนกลับ"
+
+[node name="Label1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 98.0
+offset_right = 179.0
+offset_bottom = 142.0
+theme = ExtResource("3_r6owv")
+theme_override_font_sizes/font_size = 36
+text = "1/30"
+
+[node name="QuestionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 91.0
+offset_right = 843.0
+offset_bottom = 135.0
+theme = ExtResource("3_r6owv")
+theme_override_font_sizes/font_size = 36
+text = "เวลาในหน้าปัดตรงกับข้อใด"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 609.0
+offset_right = 1126.0
+offset_bottom = 636.0
+show_percentage = false
+
+[node name="Clock" parent="." instance=ExtResource("3_ivy0s")]
+layout_mode = 1
+offset_left = -467.0
+offset_top = -134.0
+offset_right = -67.0
+offset_bottom = 266.0
+scale = Vector2(0.759999, 0.759999)
+clock_hours = 12
+clock_minutes = 33
+interactable = false
+
+[node name="AnswerButtonVContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 542.0
+offset_top = 204.0
+offset_right = 987.0
+offset_bottom = 490.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ButtonA" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("3_r6owv")
+theme_override_font_sizes/font_size = 36
+text = "ก. 11:22"
+
+[node name="ButtonB" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("3_r6owv")
+theme_override_font_sizes/font_size = 36
+text = "ข. 11:22"
+
+[node name="ButtonC" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("3_r6owv")
+theme_override_font_sizes/font_size = 36
+text = "ค. 11:22"
+
+[node name="ButtonD" type="Button" parent="AnswerButtonVContainer"]
+layout_mode = 2
+theme = ExtResource("3_r6owv")
+theme_override_font_sizes/font_size = 36
+text = "ง. 11:22"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
