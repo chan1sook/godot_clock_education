@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bg1j27wsan63b" path="res://resources/analog_clock_theme.tres" id="2_acthu"]
 [ext_resource type="Script" path="res://resources/prefabs/clock.gd" id="2_vd7ql"]
-[ext_resource type="Script" path="res://resources/clock_time_resource.gd" id="3_fk7yi"]
+[ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_fk7yi"]
 [ext_resource type="Texture2D" uid="uid://rkht3a8jp1w6" path="res://assets/images/analog_clock/clock_background.svg" id="3_igqyp"]
 [ext_resource type="Texture2D" uid="uid://dtt0aki0kf8dh" path="res://assets/images/analog_clock/clock_hand_minute.svg" id="4_3okr5"]
 [ext_resource type="Texture2D" uid="uid://b74mka1uie5rn" path="res://assets/images/analog_clock/clock_mark_1.svg" id="4_7ww37"]

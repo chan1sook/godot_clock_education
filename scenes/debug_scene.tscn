@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dx1auubj50n1j"]
 
-[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="1_7nds5"]
+[ext_resource type="Script" path="res://scenes/debug_scene.gd" id="1_txt4a"]
 
 [node name="DebugScene" type="Control"]
 layout_mode = 3
@@ -9,11 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Clock" parent="." instance=ExtResource("1_7nds5")]
-layout_mode = 1
-offset_left = 99.0
-offset_top = 85.0
-offset_right = 99.256
-offset_bottom = 85.184
-interactable = false
+script = ExtResource("1_txt4a")

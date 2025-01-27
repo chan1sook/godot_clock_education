@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdpjjmd0vuiy1"]
+[gd_scene load_steps=11 format=3 uid="uid://bdpjjmd0vuiy1"]
 
 [ext_resource type="Script" path="res://scenes/clock_playground.gd" id="1_n7vmu"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_64u0i"]
 [ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="2_lgkt2"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_qiuj0"]
-[ext_resource type="Script" path="res://resources/clock_time_resource.gd" id="3_iqbgd"]
+[ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_iqbgd"]
 [ext_resource type="PackedScene" uid="uid://c0d1gmgn30uwf" path="res://resources/prefabs/digital_clock_input.tscn" id="3_wj7y3"]
 
 [sub_resource type="Resource" id="Resource_pfead"]
@@ -16,6 +16,9 @@ minute = 36
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ek2t"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_bhvre"]
+font_size = 36
+
 [node name="ClockPlayground" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -25,28 +28,30 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_n7vmu")
+metadata/_edit_lock_ = true
 
 [node name="Background" parent="." instance=ExtResource("2_qiuj0")]
 layout_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Clock" parent="." instance=ExtResource("2_lgkt2")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 177.0
-offset_top = 192.0
-offset_right = 577.0
-offset_bottom = 592.0
+offset_left = 162.0
+offset_top = 144.0
+offset_right = 562.0
+offset_bottom = 544.0
 scale = Vector2(0.88, 0.88)
 clock_time = SubResource("Resource_pfead")
 
 [node name="DigitalClockInput" parent="." instance=ExtResource("3_wj7y3")]
 layout_mode = 2
-offset_left = 604.0
-offset_top = 231.0
-offset_right = 880.0
-offset_bottom = 376.0
+offset_left = 631.0
+offset_top = 177.0
+offset_right = 907.0
+offset_bottom = 322.0
 scale = Vector2(1.4, 1.4)
 
 [node name="PanelContainer" parent="DigitalClockInput/HourInput" index="1"]
@@ -66,10 +71,10 @@ theme_override_font_sizes/font_size = 72
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 2
-offset_left = 28.0
-offset_top = 86.0
-offset_right = 1119.0
-offset_bottom = 158.0
+offset_left = 27.0
+offset_top = 50.0
+offset_right = 1118.0
+offset_bottom = 122.0
 grow_horizontal = 2
 size_flags_vertical = 0
 theme = ExtResource("2_64u0i")
@@ -91,12 +96,36 @@ theme_type_variation = &"PurpleButton"
 theme_override_font_sizes/font_size = 32
 text = "ย้อนกลับ"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 416.0
+offset_right = 1008.0
+offset_bottom = 467.0
+alignment = 1
+
+[node name="ReadTimeInformalButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("2_64u0i")
+theme_override_font_sizes/font_size = 32
+text = "ภาษาพูด"
+
+[node name="ReadTimeFormalButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("2_64u0i")
+theme_override_font_sizes/font_size = 32
+text = "ภาษาเขียน"
+
 [node name="SyncTimeButton" type="Button" parent="."]
 layout_mode = 2
-offset_left = 626.0
-offset_top = 480.0
-offset_right = 961.0
-offset_bottom = 531.0
+offset_left = 61.0
+offset_top = 547.0
+offset_right = 396.0
+offset_bottom = 598.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("2_64u0i")
@@ -104,9 +133,53 @@ theme_override_font_sizes/font_size = 32
 toggle_mode = true
 text = "ปรับตามเวลาเครื่อง"
 
+[node name="ReadTextControl" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 507.0
+offset_top = 491.0
+offset_right = 1121.0
+offset_bottom = 597.0
+
+[node name="ReadTextLabel" type="Label" parent="ReadTextControl"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_right = 299.0
+offset_bottom = 44.0
+grow_horizontal = 2
+theme = ExtResource("2_64u0i")
+text = "ยิ่สิบสี่นาฬิกา ห้าสิบเก้านาที"
+label_settings = SubResource("LabelSettings_bhvre")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeakClockTextButton" type="Button" parent="ReadTextControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -51.0
+offset_right = 122.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("2_64u0i")
+theme_override_font_sizes/font_size = 32
+text = "อ่านออกเสียง"
+
 [connection signal="time_changed" from="Clock" to="." method="_on_clock_time_changed"]
 [connection signal="time_changed" from="DigitalClockInput" to="." method="_on_digital_clock_input_time_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ReadTimeInformalButton" to="." method="_on_read_time_informal_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ReadTimeFormalButton" to="." method="_on_read_time_formal_button_pressed"]
 [connection signal="pressed" from="SyncTimeButton" to="." method="_on_sync_time_button_pressed"]
+[connection signal="pressed" from="ReadTextControl/SpeakClockTextButton" to="." method="_on_speak_clock_text_button_pressed"]
 
 [editable path="DigitalClockInput"]

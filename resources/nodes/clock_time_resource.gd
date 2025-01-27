@@ -47,7 +47,6 @@ func normalize() -> void:
 func clone() -> ClockTimeResource:
 	return ClockTimeResource.new(hour, minute)
 
-
 func equals_clock(other: ClockTimeResource) -> bool:
 	var a = self.clone()
 	a.normalize()

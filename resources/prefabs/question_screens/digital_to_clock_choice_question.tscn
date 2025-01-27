@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://resources/prefabs/question_screens/digital_to_clock_choice_question.gd" id="1_vg0hw"]
 [ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="2_oe3jl"]
-[ext_resource type="Script" path="res://resources/clock_time_resource.gd" id="3_yo0r0"]
+[ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_yo0r0"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="5_kpf1p"]
 
 [sub_resource type="Resource" id="Resource_bgr85"]
