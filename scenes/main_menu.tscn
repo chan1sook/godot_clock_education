@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxkhtity3qsgv"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_srw65"]
-[ext_resource type="Texture2D" uid="uid://fgdh780pld3y" path="res://assets/images/hill.svg" id="2_kpfk4"]
+[ext_resource type="PackedScene" uid="uid://df8vciu352ii4" path="res://resources/prefabs/hill_background.tscn" id="2_h6e3e"]
 [ext_resource type="PackedScene" uid="uid://cw302jisen0x5" path="res://resources/prefabs/clock_tower.tscn" id="4_n5886"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_r7vl2"]
 [ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy.png" id="5_cjn5v"]
@@ -246,41 +246,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_srw65")
 
-[node name="Control" type="Control" parent="."]
+[node name="HillBackground" parent="." instance=ExtResource("2_h6e3e")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Background" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.776471, 0.988235, 1, 1)
-metadata/_edit_lock_ = true
-
-[node name="Hill" type="Sprite2D" parent="Control"]
-position = Vector2(573, 578)
-texture = ExtResource("2_kpfk4")
-
-[node name="CreditLabel" type="Label" parent="Control"]
-z_index = 10
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -31.0
-offset_right = 169.0
-offset_bottom = -8.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Designed by Freepik"
 
 [node name="StudentBoy" type="Sprite2D" parent="."]
 scale = Vector2(0.103899, 0.0980115)
@@ -322,6 +289,12 @@ layout_mode = 2
 theme = ExtResource("4_r7vl2")
 theme_override_font_sizes/font_size = 36
 text = "ทดสอบ"
+
+[node name="CreditButton" type="Button" parent="BtnVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_font_sizes/font_size = 36
+text = "ผู้จัดทำ"
 
 [node name="ExitButton" type="Button" parent="BtnVBoxContainer"]
 layout_mode = 2
@@ -380,4 +353,5 @@ libraries = {
 
 [connection signal="pressed" from="BtnVBoxContainer/FreeModeButton" to="." method="_on_free_mode_button_pressed"]
 [connection signal="pressed" from="BtnVBoxContainer/TrialModeButton" to="." method="_on_trial_mode_button_pressed"]
+[connection signal="pressed" from="BtnVBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="BtnVBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

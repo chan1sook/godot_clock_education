@@ -1,0 +1,166 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1be2ue70phpn"]
+
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_dfm54"]
+[ext_resource type="Script" path="res://scenes/credit_scene.gd" id="1_o5su7"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="1_x18tg"]
+[ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy.png" id="3_nkkbo"]
+[ext_resource type="Texture2D" uid="uid://cq24lklm1ff5e" path="res://assets/images/student_girl.png" id="4_ftsgu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_we5t5"]
+font_size = 60
+
+[sub_resource type="Animation" id="Animation_nk4eg"]
+resource_name = "intro"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StudentBoy:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-93, 499), Vector2(103, 454), Vector2(170, 478)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StudentGirl:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1308, 515), Vector2(1183, 443), Vector2(1007, 488)]
+}
+
+[sub_resource type="Animation" id="Animation_yebrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StudentBoy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(170, 478)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StudentGirl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1007, 488)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6qxh"]
+_data = {
+"RESET": SubResource("Animation_yebrb"),
+"intro": SubResource("Animation_nk4eg")
+}
+
+[node name="CreditScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5su7")
+
+[node name="Background" parent="." instance=ExtResource("1_x18tg")]
+layout_mode = 1
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 57.0
+offset_top = 52.0
+offset_right = 1104.0
+offset_bottom = 124.0
+theme = ExtResource("1_dfm54")
+text = "ผู้จัดทำ"
+label_settings = SubResource("LabelSettings_we5t5")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 164.0
+offset_right = 1119.0
+offset_bottom = 520.0
+alignment = 1
+
+[node name="CreditManLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 33
+text = "นายณัฐวัฒน์ เราเจริญศิลป์
+นายธนกร บุญสวัสดิ์"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="CreditGroupLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 33
+text = "พร้อมคณะทีมงานกลุ่มส่งเสริมทางไกล เทคโนโลยีสารสนเทศและการสื่อสาร
+สพป. ลพบุรี เขต ๑"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="CreditImageLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 33
+text = "รูปภาพมาจาก
+Freepik
+https://คลังสื่อการสอน.com/การ์ตูนนักเรียน"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 65.0
+offset_top = 54.0
+offset_right = 215.0
+offset_bottom = 105.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_dfm54")
+theme_type_variation = &"PurpleButton"
+theme_override_font_sizes/font_size = 32
+text = "ย้อนกลับ"
+
+[node name="StudentBoy" type="Sprite2D" parent="."]
+position = Vector2(170, 478)
+scale = Vector2(0.127946, 0.120696)
+texture = ExtResource("3_nkkbo")
+
+[node name="StudentGirl" type="Sprite2D" parent="."]
+position = Vector2(1007, 488)
+scale = Vector2(-0.127249, 0.127249)
+texture = ExtResource("4_ftsgu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h6qxh")
+}
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
