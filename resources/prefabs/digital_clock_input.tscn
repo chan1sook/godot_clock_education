@@ -27,13 +27,13 @@ custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="MinusHourButton" type="Button" parent="HourInput/UpInput"]
+[node name="HourUpButton" type="Button" parent="HourInput/UpInput"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_w2pkh")
 
-[node name="TextureRect" type="TextureRect" parent="HourInput/UpInput/MinusHourButton"]
+[node name="TextureRect" type="TextureRect" parent="HourInput/UpInput/HourUpButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,13 +63,13 @@ custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="AddHourButton" type="Button" parent="HourInput/DownInput"]
+[node name="HourDownButton" type="Button" parent="HourInput/DownInput"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_w2pkh")
 
-[node name="TextureRect" type="TextureRect" parent="HourInput/DownInput/AddHourButton"]
+[node name="TextureRect" type="TextureRect" parent="HourInput/DownInput/HourDownButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,13 +96,13 @@ custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="MinusTenMinuteButton" type="Button" parent="MinuteInput/UpInputs"]
+[node name="TenMinuteUpButton" type="Button" parent="MinuteInput/UpInputs"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_w2pkh")
 
-[node name="TextureRect" type="TextureRect" parent="MinuteInput/UpInputs/MinusTenMinuteButton"]
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/UpInputs/TenMinuteUpButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -115,13 +115,13 @@ stretch_mode = 5
 flip_v = true
 metadata/_edit_lock_ = true
 
-[node name="MinusMinuteButton" type="Button" parent="MinuteInput/UpInputs"]
+[node name="MinuteUpButton" type="Button" parent="MinuteInput/UpInputs"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_w2pkh")
 
-[node name="TextureRect" type="TextureRect" parent="MinuteInput/UpInputs/MinusMinuteButton"]
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/UpInputs/MinuteUpButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,13 +151,13 @@ custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="AddTenMinuteButton" type="Button" parent="MinuteInput/DownInputs"]
+[node name="TenMinuteDownButton" type="Button" parent="MinuteInput/DownInputs"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_w2pkh")
 
-[node name="TextureRect" type="TextureRect" parent="MinuteInput/DownInputs/AddTenMinuteButton"]
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/DownInputs/TenMinuteDownButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -169,13 +169,13 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="AddMinuteButton" type="Button" parent="MinuteInput/DownInputs"]
+[node name="MinuteDownButton" type="Button" parent="MinuteInput/DownInputs"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_w2pkh")
 
-[node name="TextureRect" type="TextureRect" parent="MinuteInput/DownInputs/AddMinuteButton"]
+[node name="TextureRect" type="TextureRect" parent="MinuteInput/DownInputs/MinuteDownButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -187,9 +187,9 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="HourInput/UpInput/MinusHourButton" to="." method="_on_minus_hour_button_pressed"]
-[connection signal="pressed" from="HourInput/DownInput/AddHourButton" to="." method="_on_add_hour_button_pressed"]
-[connection signal="pressed" from="MinuteInput/UpInputs/MinusTenMinuteButton" to="." method="_on_minus_ten_minute_button_pressed"]
-[connection signal="pressed" from="MinuteInput/UpInputs/MinusMinuteButton" to="." method="_on_minus_minute_button_pressed"]
-[connection signal="pressed" from="MinuteInput/DownInputs/AddTenMinuteButton" to="." method="_on_add_ten_minute_button_pressed"]
-[connection signal="pressed" from="MinuteInput/DownInputs/AddMinuteButton" to="." method="_on_add_minute_button_pressed"]
+[connection signal="pressed" from="HourInput/UpInput/HourUpButton" to="." method="_on_hour_up_button_pressed"]
+[connection signal="pressed" from="HourInput/DownInput/HourDownButton" to="." method="_on_hour_down_button_pressed"]
+[connection signal="pressed" from="MinuteInput/UpInputs/TenMinuteUpButton" to="." method="_on_ten_minute_up_button_pressed"]
+[connection signal="pressed" from="MinuteInput/UpInputs/MinuteUpButton" to="." method="_on_minute_up_button_pressed"]
+[connection signal="pressed" from="MinuteInput/DownInputs/TenMinuteDownButton" to="." method="_on_ten_minute_down_button_pressed"]
+[connection signal="pressed" from="MinuteInput/DownInputs/MinuteDownButton" to="." method="_on_minute_down_button_pressed"]

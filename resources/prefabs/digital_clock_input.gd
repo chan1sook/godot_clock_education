@@ -14,11 +14,9 @@ signal time_changed(time: ClockTimeResource)
 
 func _ready() -> void:
 	_update_clock()
-	pass
 
 func _process(delta: float) -> void:
 	_update_clock()
-	pass
 
 func _update_clock() -> void:
 	_hour_label.text = str(clock_time.hour)
@@ -26,51 +24,44 @@ func _update_clock() -> void:
 		_minute_label.text = "0" + str(clock_time.minute)
 	else:
 		_minute_label.text = str(clock_time.minute)
-	pass
 
-func _on_add_hour_button_pressed() -> void:
+func _on_hour_up_button_pressed() -> void:
 	clock_time.hour += 1
 	clock_time.normalize()
 	if not Engine.is_editor_hint():
 		time_changed.emit(clock_time.clone())
-	pass
 
 
-func _on_minus_hour_button_pressed() -> void:
-	clock_time.hour  -= 1
+func _on_hour_down_button_pressed() -> void:
+	clock_time.hour -= 1
 	clock_time.normalize()
 	if not Engine.is_editor_hint():
 		time_changed.emit(clock_time.clone())
-	pass
 
 
-func _on_add_minute_button_pressed() -> void:
+func _on_minute_up_button_pressed() -> void:
 	clock_time.minute += 1
 	clock_time.normalize()
 	if not Engine.is_editor_hint():
 		time_changed.emit(clock_time.clone())
-	pass
 
 
-func _on_minus_minute_button_pressed() -> void:
-	clock_time.minute -= 1
-	clock_time.normalize()
-	if not Engine.is_editor_hint():
-		time_changed.emit(clock_time.clone())
-	pass
-
-
-func _on_add_ten_minute_button_pressed() -> void:
+func _on_ten_minute_up_button_pressed() -> void:
 	clock_time.minute += 10
 	clock_time.normalize()
 	if not Engine.is_editor_hint():
 		time_changed.emit(clock_time.clone())
-	pass
 
 
-func _on_minus_ten_minute_button_pressed() -> void:
+func _on_minute_down_button_pressed() -> void:
+	clock_time.minute -= 1
+	clock_time.normalize()
+	if not Engine.is_editor_hint():
+		time_changed.emit(clock_time.clone())
+
+
+func _on_ten_minute_down_button_pressed() -> void:
 	clock_time.minute -= 10
 	clock_time.normalize()
 	if not Engine.is_editor_hint():
 		time_changed.emit(clock_time.clone())
-	pass

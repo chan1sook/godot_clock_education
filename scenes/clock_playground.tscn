@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdpjjmd0vuiy1"]
+[gd_scene load_steps=37 format=3 uid="uid://bdpjjmd0vuiy1"]
 
 [ext_resource type="Script" path="res://scenes/clock_playground.gd" id="1_n7vmu"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_64u0i"]
@@ -6,6 +6,36 @@
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_qiuj0"]
 [ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_iqbgd"]
 [ext_resource type="PackedScene" uid="uid://c0d1gmgn30uwf" path="res://resources/prefabs/digital_clock_input.tscn" id="3_wj7y3"]
+[ext_resource type="AudioStream" uid="uid://cpksh6vlchetp" path="res://assets/voices/02_th_two.mp3" id="4_rgfy8"]
+[ext_resource type="AudioStream" uid="uid://v6r76sxaxy2b" path="res://assets/voices/03_th_three.mp3" id="5_wiy1n"]
+[ext_resource type="AudioStream" uid="uid://bv3tlvwadok3i" path="res://assets/voices/04_th_four.mp3" id="6_j8k2l"]
+[ext_resource type="AudioStream" uid="uid://4ila5b2gbhri" path="res://assets/voices/05_th_five.mp3" id="7_cwrsa"]
+[ext_resource type="AudioStream" uid="uid://icd4ql7omfe0" path="res://assets/voices/01_th_one.mp3" id="7_flpv1"]
+[ext_resource type="AudioStream" uid="uid://cccwew7812i25" path="res://assets/voices/06_th_six.mp3" id="8_bi5h2"]
+[ext_resource type="AudioStream" uid="uid://qwn7ukkspuwl" path="res://assets/voices/07_th_seven.mp3" id="9_p27qu"]
+[ext_resource type="AudioStream" uid="uid://bo56famp1o716" path="res://assets/voices/08_th_eight.mp3" id="10_urald"]
+[ext_resource type="AudioStream" uid="uid://c0kci1w0ou3xb" path="res://assets/voices/09_th_nine.mp3" id="11_jsaw3"]
+[ext_resource type="AudioStream" uid="uid://d0umpx5na20i8" path="res://assets/voices/10_th_ten.mp3" id="12_lj6pk"]
+[ext_resource type="AudioStream" uid="uid://gswb0ag03kbr" path="res://assets/voices/12_th_twenty.mp3" id="13_otscx"]
+[ext_resource type="AudioStream" uid="uid://d3l5wbt5mep0f" path="res://assets/voices/11_th_one_eleven.mp3" id="14_2kqm8"]
+[ext_resource type="AudioStream" uid="uid://c83mtmfyu4yo5" path="res://assets/voices/13_th_hour.mp3" id="15_bobvu"]
+[ext_resource type="AudioStream" uid="uid://boqm4lp6h4qsx" path="res://assets/voices/14_th_minute.mp3" id="16_h2vej"]
+[ext_resource type="AudioStream" uid="uid://c1g6qcfjem5yx" path="res://assets/voices/15_th_night_unit.mp3" id="17_n01bl"]
+[ext_resource type="AudioStream" uid="uid://dnot88owxqocv" path="res://assets/voices/22_th_night.mp3" id="18_8i8lw"]
+[ext_resource type="AudioStream" uid="uid://duqseov4gmqcd" path="res://assets/voices/21_th_day.mp3" id="19_qneq5"]
+[ext_resource type="AudioStream" uid="uid://b000j3sqxb6aq" path="res://assets/voices/17_th_dawn.mp3" id="20_24psv"]
+[ext_resource type="AudioStream" uid="uid://bvqr0mms60i8f" path="res://assets/voices/18_th_dusk.mp3" id="21_k4bwn"]
+[ext_resource type="AudioStream" uid="uid://bi2ukc4dv8a45" path="res://assets/voices/24_th_clock_zero.mp3" id="22_5156c"]
+[ext_resource type="AudioStream" uid="uid://c3v08i4d012pd" path="res://assets/voices/25_th_half.mp3" id="23_djnrs"]
+[ext_resource type="AudioStream" uid="uid://bot6s58kj1r5p" path="res://assets/voices/16_th_hour_unit.mp3" id="24_44e33"]
+[ext_resource type="AudioStream" uid="uid://b2p6as5w5r1cv" path="res://assets/voices/19_th_midnight_unit.mp3" id="25_d3x1b"]
+[ext_resource type="AudioStream" uid="uid://bl7hxji6mm0b" path="res://assets/voices/20_th_noon.mp3" id="26_sahqa"]
+[ext_resource type="AudioStream" uid="uid://hekdt65tevqi" path="res://assets/voices/23_th_noon_unit.mp3" id="27_y1xi1"]
+
+[sub_resource type="Resource" id="Resource_pfogv"]
+script = ExtResource("3_iqbgd")
+hour = 8
+minute = 0
 
 [sub_resource type="Resource" id="Resource_pfead"]
 script = ExtResource("3_iqbgd")
@@ -28,6 +58,34 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_n7vmu")
+start_time = SubResource("Resource_pfogv")
+voices_map = {
+"ครึ่ง": ExtResource("23_djnrs"),
+"คืน": ExtResource("18_8i8lw"),
+"ตรง": ExtResource("22_5156c"),
+"ตี": ExtResource("25_d3x1b"),
+"ทุ่ม": ExtResource("17_n01bl"),
+"นาที": ExtResource("16_h2vej"),
+"นาฬิกา": ExtResource("15_bobvu"),
+"บ่าย": ExtResource("27_y1xi1"),
+"ยี่": ExtResource("13_otscx"),
+"วัน": ExtResource("19_qneq5"),
+"สอง": ExtResource("4_rgfy8"),
+"สาม": ExtResource("5_wiy1n"),
+"สิบ": ExtResource("12_lj6pk"),
+"สี่": ExtResource("6_j8k2l"),
+"หก": ExtResource("8_bi5h2"),
+"หนึ่ง": ExtResource("7_flpv1"),
+"ห้า": ExtResource("7_cwrsa"),
+"เก้า": ExtResource("11_jsaw3"),
+"เจ็ด": ExtResource("9_p27qu"),
+"เช้า": ExtResource("20_24psv"),
+"เที่ยง": ExtResource("26_sahqa"),
+"เย็น": ExtResource("21_k4bwn"),
+"เอ็ด": ExtResource("14_2kqm8"),
+"แปด": ExtResource("10_urald"),
+"โมง": ExtResource("24_44e33")
+}
 metadata/_edit_lock_ = true
 
 [node name="Background" parent="." instance=ExtResource("2_qiuj0")]
@@ -156,7 +214,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SpeakClockTextButton" type="Button" parent="ReadTextControl"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -173,6 +230,11 @@ size_flags_vertical = 8
 theme = ExtResource("2_64u0i")
 theme_override_font_sizes/font_size = 32
 text = "อ่านออกเสียง"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SilentTimer" type="Timer" parent="AudioStreamPlayer"]
+one_shot = true
 
 [connection signal="time_changed" from="Clock" to="." method="_on_clock_time_changed"]
 [connection signal="time_changed" from="DigitalClockInput" to="." method="_on_digital_clock_input_time_changed"]
