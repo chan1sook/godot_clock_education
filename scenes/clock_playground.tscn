@@ -1,11 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://bdpjjmd0vuiy1"]
+[gd_scene load_steps=38 format=3 uid="uid://bdpjjmd0vuiy1"]
 
 [ext_resource type="Script" path="res://scenes/clock_playground.gd" id="1_n7vmu"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_64u0i"]
-[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="2_lgkt2"]
-[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_qiuj0"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/components/clock.tscn" id="2_lgkt2"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_qiuj0"]
 [ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_iqbgd"]
-[ext_resource type="PackedScene" uid="uid://c0d1gmgn30uwf" path="res://resources/prefabs/digital_clock_input.tscn" id="3_wj7y3"]
+[ext_resource type="PackedScene" uid="uid://c0d1gmgn30uwf" path="res://resources/components/digital_clock_input.tscn" id="3_wj7y3"]
 [ext_resource type="AudioStream" uid="uid://cpksh6vlchetp" path="res://assets/voices/02_th_two.mp3" id="4_rgfy8"]
 [ext_resource type="AudioStream" uid="uid://v6r76sxaxy2b" path="res://assets/voices/03_th_three.mp3" id="5_wiy1n"]
 [ext_resource type="AudioStream" uid="uid://bv3tlvwadok3i" path="res://assets/voices/04_th_four.mp3" id="6_j8k2l"]
@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://b2p6as5w5r1cv" path="res://assets/voices/19_th_midnight_unit.mp3" id="25_d3x1b"]
 [ext_resource type="AudioStream" uid="uid://bl7hxji6mm0b" path="res://assets/voices/20_th_noon.mp3" id="26_sahqa"]
 [ext_resource type="AudioStream" uid="uid://hekdt65tevqi" path="res://assets/voices/23_th_noon_unit.mp3" id="27_y1xi1"]
+[ext_resource type="PackedScene" uid="uid://ef68ge1tpdju" path="res://resources/components/clock_voice_playback.tscn" id="28_f0tah"]
 
 [sub_resource type="Resource" id="Resource_pfogv"]
 script = ExtResource("3_iqbgd")
@@ -87,6 +88,35 @@ voices_map = {
 "โมง": ExtResource("24_44e33")
 }
 metadata/_edit_lock_ = true
+
+[node name="ClockVoicePlayback" parent="." instance=ExtResource("28_f0tah")]
+voice_word_offset = {
+"ครึ่ง": 0.0,
+"คืน": 0.0,
+"ตรง": 0.0,
+"ตี": -0.15,
+"ทุ่ม": 0.0,
+"นาที": 0.0,
+"นาฬิกา": 0.0,
+"บ่าย": -0.1,
+"ยี่": -0.09,
+"วัน": 0.0,
+"ศูนย์": -0.15,
+"สอง": -0.2,
+"สาม": -0.2,
+"สิบ": -0.05,
+"สี่": -0.2,
+"หก": 0.0,
+"หนึ่ง": -0.15,
+"ห้า": -0.15,
+"เก้า": -0.15,
+"เจ็ด": 0.0,
+"เที่ยง": -0.15,
+"เย็น": 0.0,
+"เอ็ด": -0.075,
+"แปด": -0.15,
+"โมง": -0.1
+}
 
 [node name="Background" parent="." instance=ExtResource("2_qiuj0")]
 layout_mode = 1

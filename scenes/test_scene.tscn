@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_a43es"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_aonw2"]
-[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_n75kx"]
-[ext_resource type="PackedScene" uid="uid://curw8v7qrspij" path="res://resources/prefabs/timer_bar.tscn" id="4_8p806"]
-[ext_resource type="PackedScene" uid="uid://m01dmrn2c0fo" path="res://resources/prefabs/question_screens/clock_to_digital_choice_question.tscn" id="4_jtr7r"]
-[ext_resource type="PackedScene" uid="uid://q6ypupt2b4s7" path="res://resources/prefabs/question_screens/digital_to_clock_choice_question.tscn" id="5_hk5yu"]
-[ext_resource type="PackedScene" uid="uid://bmifc4rj4ddqn" path="res://resources/prefabs/question_screens/clock_to_digital_question.tscn" id="6_06peb"]
-[ext_resource type="PackedScene" uid="uid://bj41w4m3hr2qc" path="res://resources/prefabs/question_screens/digital_to_clock_question.tscn" id="7_si6jt"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_n75kx"]
+[ext_resource type="PackedScene" uid="uid://curw8v7qrspij" path="res://resources/components/timer_bar.tscn" id="4_8p806"]
+[ext_resource type="PackedScene" uid="uid://m01dmrn2c0fo" path="res://resources/ui/question_screens/clock_to_digital_choice_question.tscn" id="4_jtr7r"]
+[ext_resource type="PackedScene" uid="uid://q6ypupt2b4s7" path="res://resources/ui/question_screens/digital_to_clock_choice_question.tscn" id="5_hk5yu"]
+[ext_resource type="PackedScene" uid="uid://bmifc4rj4ddqn" path="res://resources/ui/question_screens/clock_to_digital_question.tscn" id="6_06peb"]
+[ext_resource type="PackedScene" uid="uid://bj41w4m3hr2qc" path="res://resources/ui/question_screens/digital_to_clock_question.tscn" id="7_si6jt"]
 
 [node name="TestScene" type="Control"]
 layout_mode = 3

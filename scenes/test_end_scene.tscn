@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxg4ibvdyperd"]
 
 [ext_resource type="Script" path="res://scenes/test_end_scene.gd" id="1_pgn5s"]
-[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_0yu1k"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_0yu1k"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_q8cad"]
 
 [node name="TestEndScene" type="Control"]

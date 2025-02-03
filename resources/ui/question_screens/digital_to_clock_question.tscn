@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bj41w4m3hr2qc"]
 
-[ext_resource type="Script" path="res://resources/prefabs/question_screens/digital_to_clock_question.gd" id="1_3ehnr"]
-[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="1_wq0if"]
+[ext_resource type="Script" path="res://resources/ui/question_screens/digital_to_clock_question.gd" id="1_3ehnr"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/components/clock.tscn" id="1_wq0if"]
 [ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_8fq6i"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="5_3mkvq"]
 

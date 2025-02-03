@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0
+- Improve Read Voice sound
+- Fix missing voice (zero)
+
 ## 0.0.4
 Add Read Voice button (WIP.)
 

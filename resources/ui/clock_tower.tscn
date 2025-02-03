@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cw302jisen0x5"]
 
 [ext_resource type="Texture2D" uid="uid://d3xrnnbpah5ix" path="res://assets/images/clock_tower/clock_tower_2.png" id="1_ehad2"]
-[ext_resource type="Script" path="res://resources/prefabs/clock_tower.gd" id="2_5fxnf"]
+[ext_resource type="Script" path="res://resources/ui/clock_tower.gd" id="2_5fxnf"]
 [ext_resource type="Texture2D" uid="uid://blmcdfqaii4we" path="res://assets/images/clock_tower/clock_tower_hand.svg" id="2_83mki"]
-[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/prefabs/clock.tscn" id="4_ajphn"]
+[ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/components/clock.tscn" id="4_ajphn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kx7qe"]
 radius = 26.6971

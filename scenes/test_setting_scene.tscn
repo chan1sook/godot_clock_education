@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_7rlj2"]
 [ext_resource type="Script" path="res://scenes/test_setting_scene.gd" id="1_taf6w"]
-[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="2_8etbl"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_8etbl"]
 
 [node name="TestSettingScene" type="Control"]
 layout_mode = 3

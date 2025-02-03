@@ -1,0 +1,95 @@
+[gd_scene load_steps=28 format=3 uid="uid://ef68ge1tpdju"]
+
+[ext_resource type="Script" path="res://resources/components/clock_voice_playback.gd" id="1_dnufj"]
+[ext_resource type="AudioStream" uid="uid://c3v08i4d012pd" path="res://assets/voices/25_th_half.mp3" id="2_nvmd6"]
+[ext_resource type="AudioStream" uid="uid://dnot88owxqocv" path="res://assets/voices/22_th_night.mp3" id="3_pxe3o"]
+[ext_resource type="AudioStream" uid="uid://bi2ukc4dv8a45" path="res://assets/voices/24_th_clock_zero.mp3" id="4_xnd27"]
+[ext_resource type="AudioStream" uid="uid://b2p6as5w5r1cv" path="res://assets/voices/19_th_midnight_unit.mp3" id="5_bc737"]
+[ext_resource type="AudioStream" uid="uid://c1g6qcfjem5yx" path="res://assets/voices/15_th_night_unit.mp3" id="6_57atd"]
+[ext_resource type="AudioStream" uid="uid://boqm4lp6h4qsx" path="res://assets/voices/14_th_minute.mp3" id="7_p7oxw"]
+[ext_resource type="AudioStream" uid="uid://c83mtmfyu4yo5" path="res://assets/voices/13_th_hour.mp3" id="8_85l3p"]
+[ext_resource type="AudioStream" uid="uid://hekdt65tevqi" path="res://assets/voices/23_th_noon_unit.mp3" id="9_tncj3"]
+[ext_resource type="AudioStream" uid="uid://gswb0ag03kbr" path="res://assets/voices/12_th_twenty.mp3" id="10_si37u"]
+[ext_resource type="AudioStream" uid="uid://duqseov4gmqcd" path="res://assets/voices/21_th_day.mp3" id="11_36jb2"]
+[ext_resource type="AudioStream" uid="uid://cpksh6vlchetp" path="res://assets/voices/02_th_two.mp3" id="12_hfl7v"]
+[ext_resource type="AudioStream" uid="uid://v6r76sxaxy2b" path="res://assets/voices/03_th_three.mp3" id="13_dnl2w"]
+[ext_resource type="AudioStream" uid="uid://d0umpx5na20i8" path="res://assets/voices/10_th_ten.mp3" id="14_dpsib"]
+[ext_resource type="AudioStream" uid="uid://bv3tlvwadok3i" path="res://assets/voices/04_th_four.mp3" id="15_lqhi6"]
+[ext_resource type="AudioStream" uid="uid://cccwew7812i25" path="res://assets/voices/06_th_six.mp3" id="16_5uq72"]
+[ext_resource type="AudioStream" uid="uid://icd4ql7omfe0" path="res://assets/voices/01_th_one.mp3" id="17_ywlar"]
+[ext_resource type="AudioStream" uid="uid://4ila5b2gbhri" path="res://assets/voices/05_th_five.mp3" id="18_xi3dh"]
+[ext_resource type="AudioStream" uid="uid://c0kci1w0ou3xb" path="res://assets/voices/09_th_nine.mp3" id="19_rtlry"]
+[ext_resource type="AudioStream" uid="uid://qwn7ukkspuwl" path="res://assets/voices/07_th_seven.mp3" id="20_juhwh"]
+[ext_resource type="AudioStream" uid="uid://b000j3sqxb6aq" path="res://assets/voices/17_th_dawn.mp3" id="21_dtjmg"]
+[ext_resource type="AudioStream" uid="uid://bl7hxji6mm0b" path="res://assets/voices/20_th_noon.mp3" id="22_uv7us"]
+[ext_resource type="AudioStream" uid="uid://bvqr0mms60i8f" path="res://assets/voices/18_th_dusk.mp3" id="23_t75gx"]
+[ext_resource type="AudioStream" uid="uid://d3l5wbt5mep0f" path="res://assets/voices/11_th_one_eleven.mp3" id="24_sgf05"]
+[ext_resource type="AudioStream" uid="uid://bo56famp1o716" path="res://assets/voices/08_th_eight.mp3" id="25_cbcjj"]
+[ext_resource type="AudioStream" uid="uid://bot6s58kj1r5p" path="res://assets/voices/16_th_hour_unit.mp3" id="26_h3cgi"]
+[ext_resource type="AudioStream" uid="uid://wkq2fj7kf5l7" path="res://assets/voices/26_th_zero.mp3" id="27_bm7dm"]
+
+[node name="ClockVoicePlayback" type="Node"]
+script = ExtResource("1_dnufj")
+voices = {
+"ครึ่ง": ExtResource("2_nvmd6"),
+"คืน": ExtResource("3_pxe3o"),
+"ตรง": ExtResource("4_xnd27"),
+"ตี": ExtResource("5_bc737"),
+"ทุ่ม": ExtResource("6_57atd"),
+"นาที": ExtResource("7_p7oxw"),
+"นาฬิกา": ExtResource("8_85l3p"),
+"บ่าย": ExtResource("9_tncj3"),
+"ยี่": ExtResource("10_si37u"),
+"วัน": ExtResource("11_36jb2"),
+"ศูนย์": ExtResource("27_bm7dm"),
+"สอง": ExtResource("12_hfl7v"),
+"สาม": ExtResource("13_dnl2w"),
+"สิบ": ExtResource("14_dpsib"),
+"สี่": ExtResource("15_lqhi6"),
+"หก": ExtResource("16_5uq72"),
+"หนึ่ง": ExtResource("17_ywlar"),
+"ห้า": ExtResource("18_xi3dh"),
+"เก้า": ExtResource("19_rtlry"),
+"เจ็ด": ExtResource("20_juhwh"),
+"เช้า": ExtResource("21_dtjmg"),
+"เที่ยง": ExtResource("22_uv7us"),
+"เย็น": ExtResource("23_t75gx"),
+"เอ็ด": ExtResource("24_sgf05"),
+"แปด": ExtResource("25_cbcjj"),
+"โมง": ExtResource("26_h3cgi")
+}
+voice_word_offset = {
+"ครึ่ง": 0.0,
+"คืน": 0.0,
+"ตรง": 0.0,
+"ตี": -0.15,
+"ทุ่ม": 0.0,
+"นาที": 0.0,
+"นาฬิกา": 0.0,
+"บ่าย": -0.1,
+"ยี่": -0.09,
+"วัน": 0.0,
+"ศูนย์": -0.1,
+"สอง": -0.2,
+"สาม": -0.2,
+"สิบ": -0.05,
+"สี่": -0.2,
+"หก": 0.0,
+"หนึ่ง": -0.15,
+"ห้า": -0.15,
+"เก้า": -0.15,
+"เจ็ด": 0.0,
+"เช้า": 0.0,
+"เที่ยง": -0.15,
+"เย็น": 0.0,
+"เอ็ด": -0.075,
+"แปด": -0.15,
+"โมง": -0.1
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[node name="SilentTimer" type="Timer" parent="."]
+one_shot = true

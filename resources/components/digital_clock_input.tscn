@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0d1gmgn30uwf"]
 
 [ext_resource type="Texture2D" uid="uid://cuouphflrqay3" path="res://assets/images/chevron_down_32x32.png" id="1_4no5x"]
-[ext_resource type="Script" path="res://resources/prefabs/digital_clock_input.gd" id="1_x40rv"]
+[ext_resource type="Script" path="res://resources/components/digital_clock_input.gd" id="1_x40rv"]
 [ext_resource type="FontFile" uid="uid://diej0aman8wi8" path="res://assets/fonts/Itim-Regular.ttf" id="2_c4413"]
 [ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="2_q8b43"]
 [ext_resource type="Theme" uid="uid://qg5eamh6spsa" path="res://resources/digital_clock_theme.tres" id="3_w2pkh"]

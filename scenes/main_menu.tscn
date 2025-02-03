@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxkhtity3qsgv"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_srw65"]
-[ext_resource type="PackedScene" uid="uid://df8vciu352ii4" path="res://resources/prefabs/hill_background.tscn" id="2_h6e3e"]
-[ext_resource type="PackedScene" uid="uid://cw302jisen0x5" path="res://resources/prefabs/clock_tower.tscn" id="4_n5886"]
+[ext_resource type="PackedScene" uid="uid://df8vciu352ii4" path="res://resources/ui/hill_background.tscn" id="2_h6e3e"]
+[ext_resource type="PackedScene" uid="uid://cw302jisen0x5" path="res://resources/ui/clock_tower.tscn" id="4_n5886"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_r7vl2"]
 [ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy.png" id="5_cjn5v"]
 [ext_resource type="Texture2D" uid="uid://cq24lklm1ff5e" path="res://assets/images/student_girl.png" id="6_t27oq"]

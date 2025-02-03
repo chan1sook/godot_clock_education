@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_dfm54"]
 [ext_resource type="Script" path="res://scenes/credit_scene.gd" id="1_o5su7"]
-[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/prefabs/chalkboard_background.tscn" id="1_x18tg"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="1_x18tg"]
 [ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy.png" id="3_nkkbo"]
 [ext_resource type="Texture2D" uid="uid://cq24lklm1ff5e" path="res://assets/images/student_girl.png" id="4_ftsgu"]
 
