@@ -325,7 +325,7 @@ layout_mode = 2
 theme = ExtResource("4_r7vl2")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
-text = "What time it is?"
+text = "What time is it?"
 
 [node name="ClockTower" parent="." instance=ExtResource("4_n5886")]
 
