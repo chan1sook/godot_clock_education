@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://q6ypupt2b4s7"]
 
-[ext_resource type="Script" path="res://resources/ui/question_screens/digital_to_clock_choice_question.gd" id="1_vg0hw"]
+[ext_resource type="Script" uid="uid://d36osj5japfce" path="res://resources/ui/question_screens/digital_to_clock_choice_question.gd" id="1_vg0hw"]
 [ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/components/clock.tscn" id="2_oe3jl"]
-[ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_yo0r0"]
+[ext_resource type="Script" uid="uid://bt8oofm2jelki" path="res://resources/nodes/clock_time_resource.gd" id="3_yo0r0"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="5_kpf1p"]
 
 [sub_resource type="Resource" id="Resource_bgr85"]

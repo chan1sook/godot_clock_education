@@ -1,10 +1,10 @@
 [gd_scene load_steps=38 format=3 uid="uid://bdpjjmd0vuiy1"]
 
-[ext_resource type="Script" path="res://scenes/clock_playground.gd" id="1_n7vmu"]
+[ext_resource type="Script" uid="uid://cecmxf2qukiji" path="res://scenes/clock_playground.gd" id="1_n7vmu"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_64u0i"]
 [ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/components/clock.tscn" id="2_lgkt2"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_qiuj0"]
-[ext_resource type="Script" path="res://resources/nodes/clock_time_resource.gd" id="3_iqbgd"]
+[ext_resource type="Script" uid="uid://bt8oofm2jelki" path="res://resources/nodes/clock_time_resource.gd" id="3_iqbgd"]
 [ext_resource type="PackedScene" uid="uid://c0d1gmgn30uwf" path="res://resources/components/digital_clock_input.tscn" id="3_wj7y3"]
 [ext_resource type="AudioStream" uid="uid://cpksh6vlchetp" path="res://assets/voices/02_th_two.mp3" id="4_rgfy8"]
 [ext_resource type="AudioStream" uid="uid://v6r76sxaxy2b" path="res://assets/voices/03_th_three.mp3" id="5_wiy1n"]

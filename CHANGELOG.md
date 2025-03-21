@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+- Bump Godot Project Version
+- Update Credit Page
+
 ## 0.0.4
 Add Read Voice button (WIP.)
 

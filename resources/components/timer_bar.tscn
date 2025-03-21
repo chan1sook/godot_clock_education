@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://curw8v7qrspij"]
 
 [ext_resource type="Theme" uid="uid://pky4d42l828g" path="res://resources/timer_theme.tres" id="1_fxcj2"]
-[ext_resource type="Script" path="res://resources/components/timer_bar.gd" id="2_nyamj"]
+[ext_resource type="Script" uid="uid://b1aae3mto3ywm" path="res://resources/components/timer_bar.gd" id="2_nyamj"]
 
 [node name="TimerBar" type="Control"]
 layout_mode = 3

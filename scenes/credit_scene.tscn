@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1be2ue70phpn"]
+[gd_scene load_steps=11 format=3 uid="uid://b1be2ue70phpn"]
 
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_dfm54"]
-[ext_resource type="Script" path="res://scenes/credit_scene.gd" id="1_o5su7"]
+[ext_resource type="Script" uid="uid://b3bs23dp02iha" path="res://scenes/credit_scene.gd" id="1_o5su7"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="1_x18tg"]
 [ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy.png" id="3_nkkbo"]
 [ext_resource type="Texture2D" uid="uid://cq24lklm1ff5e" path="res://assets/images/student_girl.png" id="4_ftsgu"]
@@ -9,12 +9,15 @@
 [sub_resource type="LabelSettings" id="LabelSettings_we5t5"]
 font_size = 60
 
+[sub_resource type="LabelSettings" id="LabelSettings_8q0x2"]
+font_size = 40
+
 [sub_resource type="Animation" id="Animation_yebrb"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StudentBoy:position")
+tracks/0/path = NodePath("Node2D/StudentBoy:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("StudentGirl:position")
+tracks/1/path = NodePath("Node2D/StudentGirl:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -43,7 +46,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StudentBoy:position")
+tracks/0/path = NodePath("Node2D/StudentBoy:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -55,7 +58,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("StudentGirl:position")
+tracks/1/path = NodePath("Node2D/StudentGirl:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -67,8 +70,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h6qxh"]
 _data = {
-"RESET": SubResource("Animation_yebrb"),
-"intro": SubResource("Animation_nk4eg")
+&"RESET": SubResource("Animation_yebrb"),
+&"intro": SubResource("Animation_nk4eg")
 }
 
 [node name="CreditScene" type="Control"]
@@ -107,11 +110,28 @@ layout_mode = 2
 theme = ExtResource("1_dfm54")
 theme_override_font_sizes/font_size = 33
 text = "นายณัฐวัฒน์ เราเจริญศิลป์
-นายธนกร บุญสวัสดิ์
-นางสรินท์นรี ศรีทอง"
+นายธนกร บุญสวัสดิ์"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_dfm54")
+text = "ที่ปรึกษา"
+label_settings = SubResource("LabelSettings_8q0x2")
+horizontal_alignment = 1
+
+[node name="CreditManLabel2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 33
+text = "นางสรินท์นรี ศรีทอง"
+horizontal_alignment = 1
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 
@@ -132,8 +152,7 @@ layout_mode = 2
 theme = ExtResource("1_dfm54")
 theme_override_font_sizes/font_size = 33
 text = "รูปภาพมาจาก
-Freepik
-https://คลังสื่อการสอน.com/การ์ตูนนักเรียน"
+Freepik, https://คลังสื่อการสอน.com/การ์ตูนนักเรียน"
 horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
@@ -150,19 +169,23 @@ theme_type_variation = &"PurpleButton"
 theme_override_font_sizes/font_size = 32
 text = "ย้อนกลับ"
 
-[node name="StudentBoy" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -220)
+
+[node name="StudentBoy" type="Sprite2D" parent="Node2D"]
 position = Vector2(170, 478)
 scale = Vector2(0.127946, 0.120696)
 texture = ExtResource("3_nkkbo")
 
-[node name="StudentGirl" type="Sprite2D" parent="."]
+[node name="StudentGirl" type="Sprite2D" parent="Node2D"]
 position = Vector2(1007, 488)
-scale = Vector2(-0.127249, 0.127249)
+rotation = 3.14159
+scale = Vector2(0.127249, -0.127249)
 texture = ExtResource("4_ftsgu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_h6qxh")
+&"": SubResource("AnimationLibrary_h6qxh")
 }
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

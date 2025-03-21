@@ -12,10 +12,10 @@ config_version=5
 
 config/name="Clock Education"
 config/description="Clock Education Game"
-config/version="0.1.1"
+config/version="0.1.2"
 run/main_scene="res://scenes/main_menu.tscn"
 config/custom_user_dir_name="Clock Education"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/logo.png"
 config/windows_native_icon="res://assets/logo.ico"
 
