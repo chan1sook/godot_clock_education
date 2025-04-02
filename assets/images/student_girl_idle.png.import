@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4o5snktddgro"
-path="res://.godot/imported/clock_tower.png-fd1d43b9f45049d452cd4261e6c67f95.ctex"
+uid="uid://cq24lklm1ff5e"
+path="res://.godot/imported/student_girl_idle.png-f34f46fb436d19db78c1ad3e6619ddf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/templates/clock_tower.png"
-dest_files=["res://.godot/imported/clock_tower.png-fd1d43b9f45049d452cd4261e6c67f95.ctex"]
+source_file="res://assets/images/student_girl_idle.png"
+dest_files=["res://.godot/imported/student_girl_idle.png-f34f46fb436d19db78c1ad3e6619ddf0.ctex"]
 
 [params]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcrf16uoxqig2"]
+[gd_scene load_steps=5 format=3 uid="uid://bcrf16uoxqig2"]
 
 [ext_resource type="Script" uid="uid://bs5bpbd477ql7" path="res://scenes/test_prepare_scene.gd" id="1_bxibo"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_y5hrn"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="3_880pq"]
+[ext_resource type="PackedScene" uid="uid://cyq5q78exmhgs" path="res://resources/ui/chalkboard_confetti.tscn" id="3_dfsof"]
 
-[node name="TestPrepare" type="Control"]
+[node name="TestPrepareScene" type="Control" node_paths=PackedStringArray("subtitle_label", "info_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,36 +13,79 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bxibo")
+subtitle_label = NodePath("VBoxContainer/SubtitleLabel")
+info_label = NodePath("VBoxContainer/InfoLabel")
 
 [node name="Background" parent="." instance=ExtResource("2_y5hrn")]
 layout_mode = 1
+metadata/_edit_lock_ = true
 
-[node name="StartButton" type="Button" parent="."]
-custom_minimum_size = Vector2(300, 0)
+[node name="ChalkboardConfetti" parent="." instance=ExtResource("3_dfsof")]
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 50.0
+offset_right = 950.0
+offset_bottom = 590.0
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-offset_left = 426.0
-offset_top = 298.0
-offset_right = 726.0
-offset_bottom = 350.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+theme = ExtResource("3_880pq")
+theme_override_font_sizes/font_size = 64
+text = "แบบทดสอบ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_880pq")
+theme_override_font_sizes/font_size = 48
+text = "อ่านนาฬิกาเข็ม"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperator" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 92)
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_880pq")
 theme_override_font_sizes/font_size = 36
-text = "เริ่มแบบทดสอบ"
+text = "มีนาฬิกาเข็มเรือนหนึ่งตั้งอยู่ ให้ตั้งนาฬิกาดิจิทัลให้เวลาตรงกับเรือนแรก"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="BackButton" type="Button" parent="."]
+[node name="Seperator2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 166.0
-offset_bottom = 63.0
+layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
 theme = ExtResource("3_880pq")
 theme_type_variation = &"PurpleButton"
 theme_override_font_sizes/font_size = 32
 text = "ย้อนกลับ"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[node name="StartButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_880pq")
+theme_override_font_sizes/font_size = 36
+text = "เริ่มแบบทดสอบ"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

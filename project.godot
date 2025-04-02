@@ -12,8 +12,8 @@ config_version=5
 
 config/name="Clock Education"
 config/description="Clock Education Game"
-config/version="0.1.2"
-run/main_scene="res://scenes/main_menu.tscn"
+config/version="0.1.3"
+run/main_scene="uid://dd2u1m1pxuk1w"
 config/custom_user_dir_name="Clock Education"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/logo.png"

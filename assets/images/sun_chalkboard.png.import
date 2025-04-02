@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de1vvhlvwj7rt"
-path="res://.godot/imported/student_boy.png-31a5e5debed87da899754a828ff30569.ctex"
+uid="uid://b3lc40gpc1fp7"
+path="res://.godot/imported/sun_chalkboard.png-4512d5e962654d52089b7bc70f4c305b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/student_boy.png"
-dest_files=["res://.godot/imported/student_boy.png-31a5e5debed87da899754a828ff30569.ctex"]
+source_file="res://assets/images/sun_chalkboard.png"
+dest_files=["res://.godot/imported/sun_chalkboard.png-4512d5e962654d52089b7bc70f4c305b.ctex"]
 
 [params]
 

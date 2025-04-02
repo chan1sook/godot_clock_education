@@ -7,20 +7,15 @@ extends Control
 
 @export_group("Nodes")
 @export var animation_player: AnimationPlayer
-
-@export_group("UI")
-@export var credit_pages: Array[Control]
-@export var prev_btn: Button
-@export var next_btn: Button
+@export var version_label: Label
 
 var _animation_phase: String
 var _animation_time: float = 0
-var _current_page: int = 0
 
 func _ready() -> void:
-	_switch_credit_page()
+	version_label.text = str(Global.VERSION_STR)
 	_play_intro()
-
+	
 func _play_intro():
 	var max_duration = 0
 	for i in range(student_into_sprites.size()):
@@ -54,15 +49,7 @@ func _start_idle_animation():
 			max_duration = max(duration, max_duration)
 	_animation_time = max(max_duration, 5)
 	_animation_phase = "idle"
-
-func _switch_credit_page():
-	for i in range(credit_pages.size()):
-		var page = credit_pages[i]
-		page.visible = i == _current_page
 	
-	prev_btn.visible = _current_page > 0
-	next_btn.visible = _current_page < credit_pages.size() - 1
-
 func _process(delta: float) -> void:
 	if _animation_time > 0:
 		_animation_time -= delta
@@ -74,15 +61,14 @@ func _process(delta: float) -> void:
 		elif _animation_phase == "idle":
 			_start_idle_animation()
 	
-	_switch_credit_page()
-	
-func _on_back_button_pressed() -> void:
-	Global.on_change_scene.emit("home")
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
 
-func _on_prev_page_button_pressed() -> void:
-	if _current_page > 0:
-		_current_page -= 1
+func _on_free_mode_button_pressed() -> void:
+	Global.on_change_scene.emit("clock_playground")
 
-func _on_next_page_button_pressed() -> void:
-	if _current_page < credit_pages.size() - 1:
-		_current_page += 1
+func _on_trial_mode_button_pressed() -> void:
+	Global.on_change_scene.emit("test_setting")
+
+func _on_credit_button_pressed() -> void:
+	Global.on_change_scene.emit("credit")

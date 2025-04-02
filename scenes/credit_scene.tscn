@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1be2ue70phpn"]
+[gd_scene load_steps=14 format=3 uid="uid://b1be2ue70phpn"]
 
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_dfm54"]
 [ext_resource type="Script" uid="uid://b3bs23dp02iha" path="res://scenes/credit_scene.gd" id="1_o5su7"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="1_x18tg"]
-[ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy.png" id="3_nkkbo"]
-[ext_resource type="Texture2D" uid="uid://cq24lklm1ff5e" path="res://assets/images/student_girl.png" id="4_ftsgu"]
+[ext_resource type="PackedScene" uid="uid://qgahrvgwcak6" path="res://resources/sprites/student_sprite.tscn" id="2_nqgi5"]
+[ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy_idle.png" id="3_nkkbo"]
+[ext_resource type="Texture2D" uid="uid://66bn0e1cev6m" path="res://assets/images/student_boy_wai_chalkboard.png" id="4_a5x2q"]
+[ext_resource type="Texture2D" uid="uid://cq24lklm1ff5e" path="res://assets/images/student_girl_idle.png" id="4_ftsgu"]
+[ext_resource type="Texture2D" uid="uid://cq7ar7dbxya2u" path="res://assets/images/student_girl_wai_chalkboard.png" id="5_sfc58"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_we5t5"]
 font_size = 60
@@ -74,7 +77,7 @@ _data = {
 &"intro": SubResource("Animation_nk4eg")
 }
 
-[node name="CreditScene" type="Control"]
+[node name="CreditScene" type="Control" node_paths=PackedStringArray("student_into_sprites", "student_intro_tween", "student_idle_tween", "animation_player", "credit_pages", "prev_btn", "next_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,6 +85,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o5su7")
+student_into_sprites = [NodePath("Student1"), NodePath("Student2")]
+student_intro_tween = [NodePath("IntroRefPoints/Student1Tween"), NodePath("IntroRefPoints/Student2Tween")]
+student_intro_delay = Array[float]([0.0, 0.0])
+student_idle_tween = [NodePath("IdleRefPoints/Student1Tween"), NodePath("IdleRefPoints/Student2Tween")]
+animation_player = NodePath("AnimationPlayer")
+credit_pages = [NodePath("Page1Credit"), NodePath("Page2Credit")]
+prev_btn = NodePath("PrevPageButton")
+next_btn = NodePath("NextPageButton")
 
 [node name="Background" parent="." instance=ExtResource("1_x18tg")]
 layout_mode = 1
@@ -97,15 +108,34 @@ text = "ผู้จัดทำ"
 label_settings = SubResource("LabelSettings_we5t5")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Page1Credit" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StudentBoyWaiChalkboard" type="Sprite2D" parent="Page1Credit"]
+position = Vector2(289, 306)
+scale = Vector2(0.120409, 0.120409)
+texture = ExtResource("4_a5x2q")
+
+[node name="StudentGirlWaiChalkboard" type="Sprite2D" parent="Page1Credit"]
+position = Vector2(903, 296)
+scale = Vector2(0.120409, 0.120409)
+texture = ExtResource("5_sfc58")
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page1Credit"]
 layout_mode = 0
 offset_left = 54.0
 offset_top = 164.0
 offset_right = 1119.0
-offset_bottom = 520.0
-alignment = 1
+offset_bottom = 644.0
 
-[node name="CreditManLabel" type="Label" parent="VBoxContainer"]
+[node name="CreditManLabel" type="Label" parent="Page1Credit/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_dfm54")
 theme_override_font_sizes/font_size = 33
@@ -113,55 +143,90 @@ text = "นายณัฐวัฒน์ เราเจริญศิลป�
 นายธนกร บุญสวัสดิ์"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="VBoxContainer"]
+[node name="Spacer" type="Control" parent="Page1Credit/VBoxContainer"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+[node name="AdviserLabel" type="Label" parent="Page1Credit/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_dfm54")
 text = "ที่ปรึกษา"
 label_settings = SubResource("LabelSettings_8q0x2")
 horizontal_alignment = 1
 
-[node name="CreditManLabel2" type="Label" parent="VBoxContainer"]
+[node name="CreditManLabel2" type="Label" parent="Page1Credit/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_dfm54")
 theme_override_font_sizes/font_size = 33
 text = "นางสรินท์นรี ศรีทอง"
 horizontal_alignment = 1
 
-[node name="Spacer3" type="Control" parent="VBoxContainer"]
+[node name="Spacer3" type="Control" parent="Page1Credit/VBoxContainer"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 
-[node name="CreditGroupLabel" type="Label" parent="VBoxContainer"]
+[node name="CreditGroupLabel" type="Label" parent="Page1Credit/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_dfm54")
 theme_override_font_sizes/font_size = 33
-text = "คณะทีมงานกลุ่มส่งเสริมทางไกล เทคโนโลยีสารสนเทศและการสื่อสาร
+text = "คณะทีมงานกลุ่มส่งเสริมทางไกล
+เทคโนโลยีสารสนเทศและการสื่อสาร
 สพป. ลพบุรี เขต ๑"
 horizontal_alignment = 1
 
-[node name="Spacer2" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
+[node name="Page2Credit" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CreditImageLabel" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2Credit"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 164.0
+offset_right = 1119.0
+offset_bottom = 644.0
+
+[node name="CreditTitleLabel" type="Label" parent="Page2Credit/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_dfm54")
 theme_override_font_sizes/font_size = 33
-text = "รูปภาพมาจาก
-Freepik, https://คลังสื่อการสอน.com/การ์ตูนนักเรียน"
+text = "รูปภาพมาจาก"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Page2Credit/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="CreditImageLabel" type="Label" parent="Page2Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 33
+text = "Freepik
+https://คลังสื่อการสอน.com/การ์ตูนนักเรียน"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Page2Credit/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="CreditImageLabel2" type="Label" parent="Page2Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 33
+text = "Like icons created by Dave Gandy - Flaticon
+Sun icons created by Good Ware - Flaticon"
 horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 0
-offset_left = 65.0
-offset_top = 54.0
-offset_right = 215.0
-offset_bottom = 105.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 180.0
+offset_bottom = 81.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_dfm54")
@@ -169,15 +234,87 @@ theme_type_variation = &"PurpleButton"
 theme_override_font_sizes/font_size = 32
 text = "ย้อนกลับ"
 
+[node name="PrevPageButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -4.0
+offset_right = 88.0
+offset_bottom = 52.035
+grow_vertical = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 36
+text = "<"
+
+[node name="NextPageButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -4.0
+offset_right = -30.0
+offset_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_dfm54")
+theme_override_font_sizes/font_size = 36
+text = ">"
+
+[node name="IntroRefPoints" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Student1Tween" type="RayCast2D" parent="IntroRefPoints"]
+position = Vector2(-255, 552)
+enabled = false
+target_position = Vector2(364, 36)
+collision_mask = 0
+
+[node name="Student2Tween" type="RayCast2D" parent="IntroRefPoints"]
+position = Vector2(1415, 587)
+enabled = false
+target_position = Vector2(-371, 18)
+collision_mask = 0
+
+[node name="IdleRefPoints" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Student1Tween" type="RayCast2D" parent="IdleRefPoints"]
+position = Vector2(107, 589)
+enabled = false
+target_position = Vector2(11, 2)
+collision_mask = 0
+
+[node name="Student2Tween" type="RayCast2D" parent="IdleRefPoints"]
+position = Vector2(1045, 605)
+enabled = false
+target_position = Vector2(-9, 4)
+collision_mask = 0
+
+[node name="Student1" parent="." instance=ExtResource("2_nqgi5")]
+position = Vector2(108, 588)
+scale = Vector2(0.075, 0.075)
+
+[node name="Student2" parent="." instance=ExtResource("2_nqgi5")]
+position = Vector2(1045, 605)
+scale = Vector2(0.075, 0.075)
+gender = "Girl"
+
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(0, -220)
 
 [node name="StudentBoy" type="Sprite2D" parent="Node2D"]
+visible = false
 position = Vector2(170, 478)
 scale = Vector2(0.127946, 0.120696)
 texture = ExtResource("3_nkkbo")
 
 [node name="StudentGirl" type="Sprite2D" parent="Node2D"]
+visible = false
 position = Vector2(1007, 488)
 rotation = 3.14159
 scale = Vector2(0.127249, -0.127249)
@@ -189,3 +326,5 @@ libraries = {
 }
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PrevPageButton" to="." method="_on_prev_page_button_pressed"]
+[connection signal="pressed" from="NextPageButton" to="." method="_on_next_page_button_pressed"]

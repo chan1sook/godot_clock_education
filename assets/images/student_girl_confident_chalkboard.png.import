@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p6jra88v3cs"
-path="res://.godot/imported/wooden_frame.jpg-1502a0adf9ac952ac5716c58ba300798.ctex"
+uid="uid://13sifo0i66vc"
+path="res://.godot/imported/student_girl_confident_chalkboard.png-1f2f2171fd68a1afeca50ea50494535d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/templates/wooden_frame.jpg"
-dest_files=["res://.godot/imported/wooden_frame.jpg-1502a0adf9ac952ac5716c58ba300798.ctex"]
+source_file="res://assets/images/student_girl_confident_chalkboard.png"
+dest_files=["res://.godot/imported/student_girl_confident_chalkboard.png-1f2f2171fd68a1afeca50ea50494535d.ctex"]
 
 [params]
 

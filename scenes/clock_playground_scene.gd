@@ -5,12 +5,13 @@ var _is_syncing_time: bool = false
 @export var start_time: ClockTimeResource = ClockTimeResource.new(8, 0)
 @export var voices_map : Dictionary = {}
 
-@onready var clock: ClockNode = $Clock
-@onready var digital_clock_input: DigitalClockInputNode = $DigitalClockInput
-@onready var sync_btn: Button = $SyncTimeButton
-@onready var read_text_control = $ReadTextControl
-@onready var read_text_label = $ReadTextControl/ReadTextLabel
-@onready var clock_voice_playback: ClockVoicePlayback = $ClockVoicePlayback
+@export_group("Clock Nodes")
+@export var clock: ClockNode
+@export var digital_clock_input: DigitalClockInputNode
+@export var sync_btn: Button
+@export var read_text_control: Control
+@export var read_text_label: Label
+@export var clock_voice_playback: ClockVoicePlayback
 
 var read_time: ClockTimeResource
 var formal_clock_time_to_text = ClockTimeToText.new()
@@ -56,7 +57,7 @@ func _on_sync_time_button_pressed() -> void:
 		_is_syncing_time = false
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	Global.on_change_scene.emit("home")
 
 func _on_read_time_formal_button_pressed() -> void:
 	read_time = clock.clock_time

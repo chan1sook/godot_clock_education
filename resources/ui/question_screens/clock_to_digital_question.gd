@@ -1,5 +1,7 @@
 extends Control
 
+class_name ClockToDigitalQuestionNode
+
 signal choose_answer_result(correct: bool, choice: ClockTimeResource)
 
 @onready var _question_clock = $Clock

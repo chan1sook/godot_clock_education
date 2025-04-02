@@ -1,0 +1,342 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxkhtity3qsgv"]
+
+[ext_resource type="Script" uid="uid://cwu2tfh4wwisj" path="res://scenes/main_menu.gd" id="1_srw65"]
+[ext_resource type="PackedScene" uid="uid://df8vciu352ii4" path="res://resources/ui/hill_background.tscn" id="2_h6e3e"]
+[ext_resource type="PackedScene" uid="uid://qgahrvgwcak6" path="res://resources/sprites/student_sprite.tscn" id="3_oa1go"]
+[ext_resource type="PackedScene" uid="uid://cw302jisen0x5" path="res://resources/ui/clock_tower.tscn" id="4_n5886"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_r7vl2"]
+
+[sub_resource type="Animation" id="Animation_ak3ar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClockTower:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(216, 236)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BtnVBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BtnVBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TitleVBoxContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448, 64)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BtnVBoxContainer/FreeModeButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BtnVBoxContainer/TrialModeButton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BtnVBoxContainer/ExitButton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k8exi"]
+resource_name = "intro"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClockTower:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(216, 1000), Vector2(216, 236)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BtnVBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BtnVBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TitleVBoxContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(448, -162), Vector2(448, -162), Vector2(448, 64)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BtnVBoxContainer/FreeModeButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BtnVBoxContainer/TrialModeButton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BtnVBoxContainer/ExitButton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bofjc"]
+_data = {
+&"RESET": SubResource("Animation_ak3ar"),
+&"intro": SubResource("Animation_k8exi")
+}
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("student_into_sprites", "student_intro_tween", "student_idle_tween")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srw65")
+student_into_sprites = [null, null]
+student_intro_tween = [NodePath("IntroRefPoints/Student1Tween"), NodePath("IntroRefPoints/Student2Tween")]
+student_intro_delay = Array[float]([0.0, 0.4])
+student_idle_tween = [NodePath("IdleRefPoints/Student1Tween"), NodePath("IdleRefPoints/Student2Tween")]
+
+[node name="HillBackground" parent="." instance=ExtResource("2_h6e3e")]
+layout_mode = 1
+
+[node name="IntroRefPoints" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Student1Tween" type="RayCast2D" parent="IntroRefPoints"]
+position = Vector2(-63, 575)
+enabled = false
+target_position = Vector2(496, -5)
+collision_mask = 0
+
+[node name="Student2Tween" type="RayCast2D" parent="IntroRefPoints"]
+position = Vector2(1247, 576)
+enabled = false
+target_position = Vector2(-179, -9)
+collision_mask = 0
+
+[node name="IdleRefPoints" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Student1Tween" type="RayCast2D" parent="IdleRefPoints"]
+position = Vector2(433, 570)
+enabled = false
+target_position = Vector2(10, 7)
+collision_mask = 0
+
+[node name="Student2Tween" type="RayCast2D" parent="IdleRefPoints"]
+position = Vector2(1068, 567)
+enabled = false
+target_position = Vector2(5, 12)
+collision_mask = 0
+
+[node name="Student1" parent="." instance=ExtResource("3_oa1go")]
+position = Vector2(-130, 552)
+scale = Vector2(0.1, 0.1)
+
+[node name="Student2" parent="." instance=ExtResource("3_oa1go")]
+position = Vector2(1233, 559)
+scale = Vector2(0.1, 0.1)
+gender = "Girl"
+
+[node name="BtnVBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_left = 513.0
+offset_top = 268.0
+offset_right = 985.0
+offset_bottom = 586.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="StoryModeButton" type="Button" parent="BtnVBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_font_sizes/font_size = 36
+disabled = true
+text = "ฝึกสอน"
+
+[node name="FreeModeButton" type="Button" parent="BtnVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_font_sizes/font_size = 36
+text = "เล่นนาฬิกา"
+
+[node name="TrialModeButton" type="Button" parent="BtnVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_font_sizes/font_size = 36
+text = "ทดสอบ"
+
+[node name="CreditButton" type="Button" parent="BtnVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_font_sizes/font_size = 36
+text = "ผู้จัดทำ"
+
+[node name="ExitButton" type="Button" parent="BtnVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_font_sizes/font_size = 36
+text = "ออกจากเกม"
+
+[node name="TitleVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 1069.0
+offset_bottom = 207.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="TitleVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "หนูจ๋า เวลาเท่าไร"
+
+[node name="SubtitleLabel" type="Label" parent="TitleVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_r7vl2")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "What time is it?"
+
+[node name="ClockTower" parent="." instance=ExtResource("4_n5886")]
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -31.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1.0.0"
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bofjc")
+}
+
+[connection signal="pressed" from="BtnVBoxContainer/FreeModeButton" to="." method="_on_free_mode_button_pressed"]
+[connection signal="pressed" from="BtnVBoxContainer/TrialModeButton" to="." method="_on_trial_mode_button_pressed"]
+[connection signal="pressed" from="BtnVBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="BtnVBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2vgvwso01wcj"]
 
 [ext_resource type="Texture2D" uid="uid://ba36l47iehrw0" path="res://assets/images/chalkboard_compressed.jpg" id="1_u7ajx"]
-[ext_resource type="Texture2D" uid="uid://b21f2ed4iok82" path="res://assets/images/wooden_frame.png" id="2_on64a"]
+[ext_resource type="Texture2D" uid="uid://b2a2jigr4qdhc" path="res://assets/images/wooden_frame_pixeled.png" id="3_y2ov2"]
 
 [node name="Background" type="Control"]
 layout_mode = 3
@@ -12,44 +12,24 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Chalkboard" type="TextureRect" parent="."]
+[node name="Board" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 2865.0
-offset_bottom = 1628.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.2865, 0.2865)
 texture = ExtResource("1_u7ajx")
-expand_mode = 1
 
-[node name="Frame" type="TextureRect" parent="."]
+[node name="Frame2" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = -25.0
-offset_right = 3057.0
-offset_bottom = 1784.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.2865, 0.2865)
-texture = ExtResource("2_on64a")
-expand_mode = 1
-
-[node name="CreditLabel" type="Label" parent="."]
-z_index = 10
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -28.0
-offset_right = 169.0
-offset_bottom = -5.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Designed by Freepik"
+texture = ExtResource("3_y2ov2")
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 11
+patch_margin_bottom = 11

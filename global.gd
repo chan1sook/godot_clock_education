@@ -12,3 +12,8 @@ const UNLIMITED_TIME_FLAG = true
 var test_score = 10
 var test_max_score = 10
 var test_questions : Array[QuestionScheme] = []
+var question_name: String = ""
+var question_description: String = ""
+
+### Scene Signal
+signal on_change_scene(next_scene: String)

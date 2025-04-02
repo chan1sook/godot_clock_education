@@ -1,5 +1,7 @@
 extends Control
 
+class_name TestTimerBar
+
 signal timeout()
 
 @onready var _container = $HBoxContainer

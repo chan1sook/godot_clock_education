@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyq5q78exmhgs"]
+
+[ext_resource type="Texture2D" uid="uid://gudlppeepc2l" path="res://assets/images/student_boy_confident_chalkboard.png" id="1_7caiy"]
+[ext_resource type="Texture2D" uid="uid://daan8gnn6ade4" path="res://assets/images/thumbs_up_chalkboard.png" id="2_2xc17"]
+[ext_resource type="Texture2D" uid="uid://13sifo0i66vc" path="res://assets/images/student_girl_confident_chalkboard.png" id="3_07340"]
+[ext_resource type="Texture2D" uid="uid://b3lc40gpc1fp7" path="res://assets/images/sun_chalkboard.png" id="4_t04vu"]
+
+[node name="ChalkboardConfetti" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StudentBoyConfidentChalkboard" type="Sprite2D" parent="."]
+position = Vector2(143, 470)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_7caiy")
+flip_h = true
+
+[node name="ThumbupChalkboard" type="Sprite2D" parent="."]
+position = Vector2(1025, 136)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_2xc17")
+flip_h = true
+
+[node name="StudentGirlConfidentChalkboard" type="Sprite2D" parent="."]
+position = Vector2(1012, 510)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_07340")
+flip_h = true
+
+[node name="SunChalkboard" type="Sprite2D" parent="."]
+position = Vector2(117, 106)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_t04vu")

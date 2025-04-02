@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://qgahrvgwcak6"]
+
+[ext_resource type="Script" uid="uid://b20oof1o4jtay" path="res://resources/sprites/student_sprite.gd" id="1_acpvr"]
+[ext_resource type="Texture2D" uid="uid://de1vvhlvwj7rt" path="res://assets/images/student_boy_idle.png" id="1_u342d"]
+[ext_resource type="Texture2D" uid="uid://cq24lklm1ff5e" path="res://assets/images/student_girl_idle.png" id="3_5ttvf"]
+
+[sub_resource type="Animation" id="Animation_5ttvf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aypyb"]
+resource_name = "jump"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.195357),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -300), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pv4wu"]
+resource_name = "jump_lower"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.195357),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -150), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ttvf"]
+_data = {
+&"RESET": SubResource("Animation_5ttvf"),
+&"jump": SubResource("Animation_aypyb"),
+&"jump_lower": SubResource("Animation_pv4wu")
+}
+
+[node name="StudentSprites" type="Node2D" node_paths=PackedStringArray("sprite_2d", "animation_player")]
+script = ExtResource("1_acpvr")
+boy_texture = ExtResource("1_u342d")
+girl_texture = ExtResource("3_5ttvf")
+sprite_2d = NodePath("Sprites/Sprite2D")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
+position = Vector2(5, -788)
+texture = ExtResource("1_u342d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5ttvf")
+}

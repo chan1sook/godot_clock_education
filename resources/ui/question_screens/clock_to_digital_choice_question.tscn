@@ -74,13 +74,13 @@ text = "ง. 11:22"
 
 [node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 591.0
-offset_top = 113.0
-offset_right = 973.0
-offset_bottom = 157.0
+offset_left = 575.0
+offset_top = 107.0
+offset_right = 981.0
+offset_bottom = 151.0
 theme = ExtResource("4_4aj0v")
 theme_override_font_sizes/font_size = 36
-text = "เวลาในหน้าปัดตรงกับข้อใด"
+text = "เวลาข้อใดที่ตรงกับนนาฬิกานี้"
 
 [connection signal="pressed" from="AnswerButtonVContainer/ButtonA" to="." method="_on_button_a_pressed"]
 [connection signal="pressed" from="AnswerButtonVContainer/ButtonB" to="." method="_on_button_b_pressed"]

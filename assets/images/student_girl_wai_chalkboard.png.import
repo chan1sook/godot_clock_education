@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq24lklm1ff5e"
-path="res://.godot/imported/student_girl.png-44e930d7e3fc9ad5c9c80d761d658027.ctex"
+uid="uid://cq7ar7dbxya2u"
+path="res://.godot/imported/student_girl_wai_chalkboard.png-1f1fe6596eb669126257d11f518c28d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/student_girl.png"
-dest_files=["res://.godot/imported/student_girl.png-44e930d7e3fc9ad5c9c80d761d658027.ctex"]
+source_file="res://assets/images/student_girl_wai_chalkboard.png"
+dest_files=["res://.godot/imported/student_girl_wai_chalkboard.png-1f1fe6596eb669126257d11f518c28d6.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://bdpjjmd0vuiy1"]
 
-[ext_resource type="Script" uid="uid://cecmxf2qukiji" path="res://scenes/clock_playground.gd" id="1_n7vmu"]
+[ext_resource type="Script" uid="uid://cecmxf2qukiji" path="res://scenes/clock_playground_scene.gd" id="1_n7vmu"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_64u0i"]
 [ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/components/clock.tscn" id="2_lgkt2"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_qiuj0"]
@@ -50,7 +50,7 @@ minute = 36
 [sub_resource type="LabelSettings" id="LabelSettings_bhvre"]
 font_size = 36
 
-[node name="ClockPlayground" type="Control"]
+[node name="ClockPlaygroundScene" type="Control" node_paths=PackedStringArray("clock", "digital_clock_input", "sync_btn", "read_text_control", "read_text_label", "clock_voice_playback")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,6 +87,12 @@ voices_map = {
 "แปด": ExtResource("10_urald"),
 "โมง": ExtResource("24_44e33")
 }
+clock = NodePath("Clock")
+digital_clock_input = NodePath("DigitalClockInput")
+sync_btn = NodePath("SyncTimeButton")
+read_text_control = NodePath("ReadTextControl")
+read_text_label = NodePath("ReadTextControl/ReadTextLabel")
+clock_voice_playback = NodePath("ClockVoicePlayback")
 metadata/_edit_lock_ = true
 
 [node name="ClockVoicePlayback" parent="." instance=ExtResource("28_f0tah")]
@@ -127,19 +133,19 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 162.0
-offset_top = 144.0
-offset_right = 562.0
-offset_bottom = 544.0
+offset_left = 122.0
+offset_top = 157.0
+offset_right = 522.0
+offset_bottom = 557.0
 scale = Vector2(0.88, 0.88)
 clock_time = SubResource("Resource_pfead")
 
 [node name="DigitalClockInput" parent="." instance=ExtResource("3_wj7y3")]
 layout_mode = 2
-offset_left = 631.0
-offset_top = 177.0
-offset_right = 907.0
-offset_bottom = 322.0
+offset_left = 649.0
+offset_top = 169.0
+offset_right = 925.0
+offset_bottom = 314.0
 scale = Vector2(1.4, 1.4)
 
 [node name="PanelContainer" parent="DigitalClockInput/HourInput" index="1"]
@@ -173,10 +179,10 @@ horizontal_alignment = 1
 [node name="BackButton" type="Button" parent="."]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-offset_left = 65.0
-offset_top = 54.0
-offset_right = 215.0
-offset_bottom = 105.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 180.0
+offset_bottom = 81.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("2_64u0i")
@@ -209,11 +215,15 @@ theme_override_font_sizes/font_size = 32
 text = "ภาษาเขียน"
 
 [node name="SyncTimeButton" type="Button" parent="."]
-layout_mode = 2
-offset_left = 61.0
-offset_top = 547.0
-offset_right = 396.0
-offset_bottom = 598.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -81.0
+offset_right = 365.0
+offset_bottom = -30.0
+grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("2_64u0i")

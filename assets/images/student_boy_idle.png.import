@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e20vei0swnbs"
-path="res://.godot/imported/clock.svg-0b9eccd08a6b60ca12077e84a0539de4.ctex"
+uid="uid://de1vvhlvwj7rt"
+path="res://.godot/imported/student_boy_idle.png-da3bfdb82b48bced400c723a3fb29753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/templates/clock.svg"
-dest_files=["res://.godot/imported/clock.svg-0b9eccd08a6b60ca12077e84a0539de4.ctex"]
+source_file="res://assets/images/student_boy_idle.png"
+dest_files=["res://.godot/imported/student_boy_idle.png-da3bfdb82b48bced400c723a3fb29753.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

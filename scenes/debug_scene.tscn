@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx1auubj50n1j"]
+[gd_scene load_steps=3 format=3 uid="uid://dx1auubj50n1j"]
 
 [ext_resource type="Script" uid="uid://ki0a84kuhjne" path="res://scenes/debug_scene.gd" id="1_txt4a"]
+[ext_resource type="PackedScene" uid="uid://bxkhtity3qsgv" path="res://scenes/home_scene.tscn" id="3_6l2vu"]
 
 [node name="DebugScene" type="Control"]
 layout_mode = 3
@@ -10,3 +11,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_txt4a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+
+[node name="HomeScene" parent="." instance=ExtResource("3_6l2vu")]
+layout_mode = 1

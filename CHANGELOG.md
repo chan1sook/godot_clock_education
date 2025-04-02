@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.3
+- Update Decoration in all page
+
 ## 0.1.2
 - Bump Godot Project Version
 - Update Credit Page
