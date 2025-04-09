@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://bl7hxji6mm0b" path="res://assets/voices/20_th_noon.mp3" id="26_sahqa"]
 [ext_resource type="AudioStream" uid="uid://hekdt65tevqi" path="res://assets/voices/23_th_noon_unit.mp3" id="27_y1xi1"]
 [ext_resource type="PackedScene" uid="uid://ef68ge1tpdju" path="res://resources/components/clock_voice_playback.tscn" id="28_f0tah"]
+[ext_resource type="PackedScene" uid="uid://ctvrf3rxaiyc1" path="res://resources/ui/back_button.tscn" id="33_akimw"]
 
 [sub_resource type="Resource" id="Resource_pfogv"]
 script = ExtResource("3_iqbgd")
@@ -46,9 +47,6 @@ minute = 36
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2ub0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ek2t"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_bhvre"]
-font_size = 36
 
 [node name="ClockPlaygroundScene" type="Control" node_paths=PackedStringArray("clock", "digital_clock_input", "sync_btn", "read_text_control", "read_text_label", "clock_voice_playback")]
 layout_mode = 3
@@ -124,6 +122,11 @@ voice_word_offset = {
 "โมง": -0.1
 }
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SilentTimer" type="Timer" parent="AudioStreamPlayer"]
+one_shot = true
+
 [node name="Background" parent="." instance=ExtResource("2_qiuj0")]
 layout_mode = 1
 metadata/_edit_lock_ = true
@@ -163,32 +166,29 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_5ek2t")
 [node name="MinuteLabel" parent="DigitalClockInput/MinuteInput/PanelContainer" index="0"]
 theme_override_font_sizes/font_size = 72
 
-[node name="TitleLabel" type="Label" parent="."]
-layout_mode = 2
-offset_left = 27.0
-offset_top = 50.0
-offset_right = 1118.0
-offset_bottom = 122.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-size_flags_vertical = 0
-theme = ExtResource("2_64u0i")
-theme_override_font_sizes/font_size = 60
-text = "เล่นนาฬิกา"
-horizontal_alignment = 1
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 48
 
-[node name="BackButton" type="Button" parent="."]
-custom_minimum_size = Vector2(150, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 180.0
-offset_bottom = 81.0
-size_flags_horizontal = 0
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_64u0i")
-theme_type_variation = &"PurpleButton"
-theme_override_font_sizes/font_size = 32
-text = "ย้อนกลับ"
+theme_type_variation = &"SceneTitleLabel"
+text = "ClockPlaygroundScene.TitleLabel"
+horizontal_alignment = 1
+text_overrun_behavior = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -203,33 +203,34 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = ExtResource("2_64u0i")
-theme_override_font_sizes/font_size = 32
-text = "ภาษาพูด"
+text = "ClockPlaygroundScene.InformalTextButton"
+text_overrun_behavior = 1
 
 [node name="ReadTimeFormalButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = ExtResource("2_64u0i")
-theme_override_font_sizes/font_size = 32
-text = "ภาษาเขียน"
+text = "ClockPlaygroundScene.FormalTextButton"
+text_overrun_behavior = 1
 
 [node name="SyncTimeButton" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 30.0
 offset_top = -81.0
-offset_right = 365.0
+offset_right = 476.0
 offset_bottom = -30.0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("2_64u0i")
-theme_override_font_sizes/font_size = 32
 toggle_mode = true
-text = "ปรับตามเวลาเครื่อง"
+text = "ClockPlaygroundScene.SyncTimeButton"
+text_overrun_behavior = 1
 
 [node name="ReadTextControl" type="Control" parent="."]
 anchors_preset = 0
@@ -239,6 +240,7 @@ offset_right = 1121.0
 offset_bottom = 597.0
 
 [node name="ReadTextLabel" type="Label" parent="ReadTextControl"]
+auto_translate_mode = 2
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -248,8 +250,7 @@ offset_right = 299.0
 offset_bottom = 44.0
 grow_horizontal = 2
 theme = ExtResource("2_64u0i")
-text = "ยิ่สิบสี่นาฬิกา ห้าสิบเก้านาที"
-label_settings = SubResource("LabelSettings_bhvre")
+text = "<Value:แปดนาฬิกา>"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -268,20 +269,22 @@ grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = ExtResource("2_64u0i")
-theme_override_font_sizes/font_size = 32
-text = "อ่านออกเสียง"
+text = "ClockPlaygroundScene.SpeakButton"
+text_overrun_behavior = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="SilentTimer" type="Timer" parent="AudioStreamPlayer"]
-one_shot = true
+[node name="BackButton" parent="." instance=ExtResource("33_akimw")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 210.0
+offset_bottom = 81.0
 
 [connection signal="time_changed" from="Clock" to="." method="_on_clock_time_changed"]
 [connection signal="time_changed" from="DigitalClockInput" to="." method="_on_digital_clock_input_time_changed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ReadTimeInformalButton" to="." method="_on_read_time_informal_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ReadTimeFormalButton" to="." method="_on_read_time_formal_button_pressed"]
 [connection signal="pressed" from="SyncTimeButton" to="." method="_on_sync_time_button_pressed"]
 [connection signal="pressed" from="ReadTextControl/SpeakClockTextButton" to="." method="_on_speak_clock_text_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 
 [editable path="DigitalClockInput"]

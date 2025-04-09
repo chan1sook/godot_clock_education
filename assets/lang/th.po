@@ -1,0 +1,235 @@
+# LANGUAGE translation for Clock Education for the following files:
+# res://scenes/home_scene.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Clock Education\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: scenes/home_scene.tscn
+msgid "ClockPlaygroundScene.HomeButton"
+msgstr "เล่นนาฬิกา"
+
+#: scenes/home_scene.tscn
+msgid "TestScene.HomeButton"
+msgstr "แบบทดสอบ"
+
+#: scenes/home_scene.tscn
+msgid "SettingScene.HomeButton"
+msgstr "ตั้งค่า"
+
+#: scenes/home_scene.tscn
+msgid "CreditScene.HomeButton"
+msgstr "ผู้จัดทำ"
+
+#: scenes/home_scene.tscn
+msgid "Game.Exit.HomeButton"
+msgstr "ออกจากเกม"
+
+#: scenes/home_scene.tscn
+msgid "Game.Title.HomeLabel"
+msgstr "หนูจ๋า เวลาเท่าไร"
+
+#: scenes/setting_scene.tscn
+msgid "SettingScene.TitleLabel"
+msgstr "ตั้งค่า"
+
+#: scenes/setting_scene.tscn
+msgid "SettingScene.CurrentLanguageLabel"
+msgstr "ภาษา"
+
+#: scenes/setting_scene.gd
+msgid "Game.Language.Name"
+msgstr "ไทย"
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.TitleLabel"
+msgstr "เล่นนาฬิกา"
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.InformalTextButton"
+msgstr "ภาษาพูด"
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.FormalTextButton"
+msgstr "ภาษาเขียน"
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.SyncTimeButton"
+msgstr "ปรับตามเวลาเครื่อง"
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.SpeakButton"
+msgstr "อ่านออกเสียง"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.TitleLabel"
+msgstr "ผู้จัดทำ"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ProgramerLabel.Natthawat"
+msgstr "นายณัฐวัฒน์ เราเจริญศิลป์"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ProgramerLabel.Thanagorn"
+msgstr "นายธนกร บุญสวัสดิ์"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.AdviserTitleLabel"
+msgstr "ที่ปรึกษา"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.AdviserLabel.Sarinnari"
+msgstr "นางสรินท์นรี ศรีทอง"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ICTGroupLabel"
+msgstr "คณะทีมงานกลุ่มส่งเสริมทางไกล เทคโนโลยีสารสนเทศและการสื่อสาร"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.KhetLabel"
+msgstr "สพป. ลพบุรี เขต ๑"
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ImageTitleLabel"
+msgstr "รูปภาพมาจาก"
+
+#: resources/ui/back_button.tscn
+msgid "Game.BackButton"
+msgstr "กลับ"
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.TitleLabel"
+msgstr "แบบทดสอบ"
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.ReadClockChooseButton"
+msgstr "อ่านนาฬิกาเข็ม"
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.AdjustClockChooseButton"
+msgstr "เทียบนาฬิกาเข็ม"
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.ReadClockButton"
+msgstr "ตั้งนาฬิกาดิจิตอล"
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.AdjustClockButton"
+msgstr "ตั้งนาฬิกาเข็ม"
+
+#: scenes/test_prepare_scene.tscn
+msgid "TestPrepareScene.TitleLabel"
+msgstr "แบบทดสอบ"
+
+#: scenes/test_prepare_scene.tscn
+msgid "TestPrepareScene.StartButton"
+msgstr "เริ่มทดสอบ"
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceAWithAnswer"
+msgstr "ก. %s"
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceBWithAnswer"
+msgstr "ข. %s"
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceCWithAnswer"
+msgstr "ค. %s"
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceDWithAnswer"
+msgstr "ง. %s"
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.tscn
+msgid "TestScene.ReadClockChoiceQuestion"
+msgstr "เลือกคำตอบที่ถูกต้องตามนาฬิกาซ้ายมือ"
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.AdjustClockChoiceQuestion"
+msgstr "เวลาที่แสดงอยู่ตรงกับนาฬิกาเรือนใด"
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceA"
+msgstr "ก"
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceB"
+msgstr "ข"
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceC"
+msgstr "ค"
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceD"
+msgstr "ง"
+
+#: resources/ui/question_screens/clock_to_digital_question.tscn
+msgid "TestScene.ReadClockQuestion"
+msgstr "จงตั้งเวลาให้ตรงกับนาฬิกาซ้ายมือ"
+
+#: resources/ui/question_screens/clock_to_digital_question.tscn
+#: resources/ui/question_screens/digital_to_clock_question.tscn
+msgid "TestScene.SendAnswerButton"
+msgstr "ส่งคำตอบ"
+
+#: resources/ui/question_screens/digital_to_clock_question.tscn
+msgid "TestScene.AdjustClockQuestion"
+msgstr "จงตั้งนาฬิกาให้ตรงกับเวลาดังนี้"
+
+#: scenes/test_end_scene.tscn
+msgid "TestEndScene.TitleLabel"
+msgstr "จบทดสอบ"
+
+#: scenes/test_end_scene.tscn
+msgid "TestEndScene.RestartButton"
+msgstr "ทดสอบใหม่"
+
+#: scenes/test_end_scene.tscn
+msgid "TestEndScene.HomeButton"
+msgstr "เมนูหลัก"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockChooseTitle"
+msgstr "อ่านนาฬิกาเข็ม"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockChooseInfo"
+msgstr "เลือกคำตอบเวลาที่ถูกต้องเพียงหนึ่งเดียวจากคำตอบ 4 ตัวเลือก"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockChooseTitle"
+msgstr "เทียบนาฬิกาเข็ม"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockChooseInfo"
+msgstr "เลือกนาฬิกาที่เวลาถูกต้องกับข้อความที่แสดงพียงหนึ่งเดียวจากนาฬิกา 4 เรือน"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockTitle"
+msgstr "ตั้งนาฬิกาดิจิตอล"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockInfo"
+msgstr "ให้ตั้งนาฬิกาดิจิทัลให้เวลาตรงกับเรือนแรก"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockTitle"
+msgstr "ตั้งนาฬิกาเข็ม"
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockInfo"
+msgstr "ให้ตั้งนาฬิกาเข็มเรือนให้เวลาตรงกับเรือนแรก"

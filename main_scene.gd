@@ -2,6 +2,10 @@ extends Node
 
 @export var scenes: Dictionary #String: PackedScene
 @export var start_scene_name: StringName
+
+@export_group("Nodes")
+@export var scene_node: Node
+
 var _current_scene: Node
 
 func _ready() -> void:
@@ -11,7 +15,7 @@ func _ready() -> void:
 
 func _push_new_scene(next_scene: PackedScene):
 	var _next_scene = next_scene.instantiate()
-	add_child(_next_scene)
+	scene_node.add_child(_next_scene)
 	if _current_scene:
 		_current_scene.queue_free()
 	_current_scene = _next_scene

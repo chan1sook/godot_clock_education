@@ -7,7 +7,7 @@ func _ready() -> void:
 	_render_score()
 
 func _render_score() -> void:
-	subtitle_label.text = Global.question_name
+	subtitle_label.text = tr(Global.question_name)
 	
 	var score = Global.test_score
 	var max_score = Global.test_max_score

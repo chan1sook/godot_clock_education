@@ -1,0 +1,243 @@
+# LANGUAGE translation for Clock Education for the following files:
+# res://scenes/home_scene.tscn
+# res://scenes/setting_scene.tscn
+# res://scenes/setting_scene.gd
+# res://scenes/clock_playground_scene.tscn
+# res://scenes/credit_scene.tscn
+# res://resources/ui/back_button.tscn
+# res://scenes/test_setting_scene.tscn
+# res://scenes/test_prepare_scene.tscn
+# res://resources/ui/question_screens/clock_to_digital_choice_question.gd
+# res://resources/ui/question_screens/clock_to_digital_choice_question.tscn
+# res://resources/ui/question_screens/digital_to_clock_choice_question.tscn
+# res://resources/ui/question_screens/clock_to_digital_question.tscn
+# res://resources/ui/question_screens/digital_to_clock_question.tscn
+# res://scenes/test_end_scene.tscn
+# res://extra_translations.gd
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Clock Education\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: scenes/home_scene.tscn
+msgid "ClockPlaygroundScene.HomeButton"
+msgstr ""
+
+#: scenes/home_scene.tscn
+msgid "TestScene.HomeButton"
+msgstr ""
+
+#: scenes/home_scene.tscn
+msgid "SettingScene.HomeButton"
+msgstr ""
+
+#: scenes/home_scene.tscn
+msgid "CreditScene.HomeButton"
+msgstr ""
+
+#: scenes/home_scene.tscn
+msgid "Game.Exit.HomeButton"
+msgstr ""
+
+#: scenes/home_scene.tscn
+msgid "Game.Title.HomeLabel"
+msgstr ""
+
+#: scenes/setting_scene.tscn
+msgid "SettingScene.TitleLabel"
+msgstr ""
+
+#: scenes/setting_scene.tscn
+msgid "SettingScene.CurrentLanguageLabel"
+msgstr ""
+
+#: scenes/setting_scene.gd
+msgid "Game.Language.Name"
+msgstr ""
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.TitleLabel"
+msgstr ""
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.InformalTextButton"
+msgstr ""
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.FormalTextButton"
+msgstr ""
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.SyncTimeButton"
+msgstr ""
+
+#: scenes/clock_playground_scene.tscn
+msgid "ClockPlaygroundScene.SpeakButton"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.TitleLabel"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ProgramerLabel.Natthawat"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ProgramerLabel.Thanagorn"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.AdviserTitleLabel"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.AdviserLabel.Sarinnari"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ICTGroupLabel"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.KhetLabel"
+msgstr ""
+
+#: scenes/credit_scene.tscn
+msgid "CreditScene.ImageTitleLabel"
+msgstr ""
+
+#: resources/ui/back_button.tscn
+msgid "Game.BackButton"
+msgstr ""
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.TitleLabel"
+msgstr ""
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.ReadClockChooseButton"
+msgstr ""
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.AdjustClockChooseButton"
+msgstr ""
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.ReadClockButton"
+msgstr ""
+
+#: scenes/test_setting_scene.tscn
+msgid "TestSettingScene.AdjustClockButton"
+msgstr ""
+
+#: scenes/test_prepare_scene.tscn
+msgid "TestPrepareScene.TitleLabel"
+msgstr ""
+
+#: scenes/test_prepare_scene.tscn
+msgid "TestPrepareScene.StartButton"
+msgstr ""
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceAWithAnswer"
+msgstr ""
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceBWithAnswer"
+msgstr ""
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceCWithAnswer"
+msgstr ""
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.gd
+msgid "TestScene.ChoiceDWithAnswer"
+msgstr ""
+
+#: resources/ui/question_screens/clock_to_digital_choice_question.tscn
+msgid "TestScene.ReadClockChoiceQuestion"
+msgstr ""
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.AdjustClockChoiceQuestion"
+msgstr ""
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceA"
+msgstr ""
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceB"
+msgstr ""
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceC"
+msgstr ""
+
+#: resources/ui/question_screens/digital_to_clock_choice_question.tscn
+msgid "TestScene.ChoiceD"
+msgstr ""
+
+#: resources/ui/question_screens/clock_to_digital_question.tscn
+msgid "TestScene.ReadClockQuestion"
+msgstr ""
+
+#: resources/ui/question_screens/clock_to_digital_question.tscn
+#: resources/ui/question_screens/digital_to_clock_question.tscn
+msgid "TestScene.SendAnswerButton"
+msgstr ""
+
+#: resources/ui/question_screens/digital_to_clock_question.tscn
+msgid "TestScene.AdjustClockQuestion"
+msgstr ""
+
+#: scenes/test_end_scene.tscn
+msgid "TestEndScene.TitleLabel"
+msgstr ""
+
+#: scenes/test_end_scene.tscn
+msgid "TestEndScene.RestartButton"
+msgstr ""
+
+#: scenes/test_end_scene.tscn
+msgid "TestEndScene.HomeButton"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockChooseTitle"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockChooseInfo"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockChooseTitle"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockChooseInfo"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockTitle"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.ReadClockInfo"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockTitle"
+msgstr ""
+
+#: extra_translations.gd
+msgid "TestPrepareScene.AdjustClockInfo"
+msgstr ""

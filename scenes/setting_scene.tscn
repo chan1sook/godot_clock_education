@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt6auan5cmt0d"]
+
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_2bek4"]
+[ext_resource type="Script" uid="uid://dd6jo22rwmo6v" path="res://scenes/setting_scene.gd" id="1_m6lu0"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_6whhp"]
+[ext_resource type="PackedScene" uid="uid://ctvrf3rxaiyc1" path="res://resources/ui/back_button.tscn" id="4_6whhp"]
+
+[node name="SettingScene" type="Control" node_paths=PackedStringArray("language_label", "language_item_list")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m6lu0")
+language_label = NodePath("SettingPanel/VBoxContainer/HBoxContainer/CurrentLanguageNameLabel")
+language_item_list = NodePath("SettingPanel/VBoxContainer/LanguageItemList")
+metadata/_edit_lock_ = true
+
+[node name="Background" parent="." instance=ExtResource("2_6whhp")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="SettingPanel" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingPanel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="SettingPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2bek4")
+theme_type_variation = &"SceneTitleLabel"
+text = "SettingScene.TitleLabel"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LanguageTitleLabel" type="Label" parent="SettingPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_2bek4")
+text = "SettingScene.CurrentLanguageLabel"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="CurrentLanguageNameLabel" type="Label" parent="SettingPanel/VBoxContainer/HBoxContainer"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("1_2bek4")
+text = "<Value:English>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LanguageItemList" type="ItemList" parent="SettingPanel/VBoxContainer"]
+auto_translate_mode = 2
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_2bek4")
+allow_search = false
+item_count = 1
+item_0/text = "<Value:English>"
+
+[node name="BackButton" parent="." instance=ExtResource("4_6whhp")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 210.0
+offset_bottom = 81.0
+
+[connection signal="item_selected" from="SettingPanel/VBoxContainer/LanguageItemList" to="." method="_on_language_item_list_item_selected"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

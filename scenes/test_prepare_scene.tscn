@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcrf16uoxqig2"]
+[gd_scene load_steps=6 format=3 uid="uid://bcrf16uoxqig2"]
 
 [ext_resource type="Script" uid="uid://bs5bpbd477ql7" path="res://scenes/test_prepare_scene.gd" id="1_bxibo"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_y5hrn"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="3_880pq"]
 [ext_resource type="PackedScene" uid="uid://cyq5q78exmhgs" path="res://resources/ui/chalkboard_confetti.tscn" id="3_dfsof"]
+[ext_resource type="PackedScene" uid="uid://ctvrf3rxaiyc1" path="res://resources/ui/back_button.tscn" id="5_1ym0d"]
 
 [node name="TestPrepareScene" type="Control" node_paths=PackedStringArray("subtitle_label", "info_label")]
 layout_mode = 3
@@ -13,8 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bxibo")
-subtitle_label = NodePath("VBoxContainer/SubtitleLabel")
-info_label = NodePath("VBoxContainer/InfoLabel")
+subtitle_label = NodePath("MarginContainer/VBoxContainer/SubtitleLabel")
+info_label = NodePath("MarginContainer/VBoxContainer/InfoLabel")
 
 [node name="Background" parent="." instance=ExtResource("2_y5hrn")]
 layout_mode = 1
@@ -23,69 +24,74 @@ metadata/_edit_lock_ = true
 [node name="ChalkboardConfetti" parent="." instance=ExtResource("3_dfsof")]
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 200.0
-offset_top = 50.0
-offset_right = 950.0
-offset_bottom = 590.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 48
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_880pq")
-theme_override_font_sizes/font_size = 64
-text = "แบบทดสอบ"
+theme_type_variation = &"SceneTitleLabel"
+text = "TestPrepareScene.TitleLabel"
 horizontal_alignment = 1
 vertical_alignment = 1
+text_overrun_behavior = 1
 
-[node name="SubtitleLabel" type="Label" parent="VBoxContainer"]
+[node name="SubtitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+auto_translate_mode = 2
 layout_mode = 2
 theme = ExtResource("3_880pq")
-theme_override_font_sizes/font_size = 48
-text = "อ่านนาฬิกาเข็ม"
+theme_type_variation = &"SceneSubtitleLabel"
+text = "<Value:อ่านนาฬิกาเข็ม>"
 horizontal_alignment = 1
 vertical_alignment = 1
+text_overrun_behavior = 1
 
-[node name="Seperator" type="Control" parent="VBoxContainer"]
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="InfoLabel" type="Label" parent="VBoxContainer"]
+[node name="InfoLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+auto_translate_mode = 2
 custom_minimum_size = Vector2(0, 92)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_880pq")
-theme_override_font_sizes/font_size = 36
-text = "มีนาฬิกาเข็มเรือนหนึ่งตั้งอยู่ ให้ตั้งนาฬิกาดิจิทัลให้เวลาตรงกับเรือนแรก"
+text = "<Value:มีนาฬิกาเข็มเรือนหนึ่งตั้งอยู่ ให้ตั้งนาฬิกาดิจิทัลให้เวลาตรงกับเรือนแรก>"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+text_overrun_behavior = 1
 
-[node name="Seperator2" type="Control" parent="VBoxContainer"]
+[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 65
 alignment = 1
 
-[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(150, 0)
+[node name="BackButton" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_1ym0d")]
 layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("3_880pq")
-theme_type_variation = &"PurpleButton"
-theme_override_font_sizes/font_size = 32
-text = "ย้อนกลับ"
 
-[node name="StartButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_880pq")
-theme_override_font_sizes/font_size = 36
-text = "เริ่มแบบทดสอบ"
+text = "TestPrepareScene.StartButton"
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

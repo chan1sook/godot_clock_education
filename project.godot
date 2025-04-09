@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Clock Education"
 config/description="Clock Education Game"
-config/version="0.1.3"
+config/version="0.2.0"
 run/main_scene="uid://dd2u1m1pxuk1w"
 config/custom_user_dir_name="Clock Education"
 config/features=PackedStringArray("4.4", "GL Compatibility")
@@ -31,6 +31,13 @@ window/stretch/mode="canvas_items"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/lang/en.mo", "res://assets/lang/th.mo")
+locale/translations_pot_files=PackedStringArray("res://scenes/home_scene.tscn", "res://scenes/setting_scene.tscn", "res://scenes/setting_scene.gd", "res://scenes/clock_playground_scene.tscn", "res://scenes/credit_scene.tscn", "res://resources/ui/back_button.tscn", "res://scenes/test_setting_scene.tscn", "res://scenes/test_prepare_scene.tscn", "res://resources/ui/question_screens/clock_to_digital_choice_question.gd", "res://resources/ui/question_screens/clock_to_digital_choice_question.tscn", "res://resources/ui/question_screens/digital_to_clock_choice_question.tscn", "res://resources/ui/question_screens/clock_to_digital_question.tscn", "res://resources/ui/question_screens/digital_to_clock_question.tscn", "res://scenes/test_end_scene.tscn", "res://extra_translations.gd")
+locale/include_text_server_data=true
+locale/fallback="th"
 
 [rendering]
 

@@ -16,56 +16,93 @@ script = ExtResource("3_18gcs")
 hour = 8
 minute = 0
 
-[node name="ClockToDigitalQuestion" type="Control"]
+[node name="ClockToDigitalQuestion" type="Control" node_paths=PackedStringArray("question_clock", "answer_clock")]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 66.0
-offset_top = 59.0
-offset_right = 1082.0
-offset_bottom = 615.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_o8ucu")
+question_clock = NodePath("MarginContainer/HBoxContainer/Control/Clock")
+answer_clock = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput")
 
-[node name="QuestionLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 531.0
-offset_top = 91.0
-offset_right = 904.0
-offset_bottom = 136.0
-theme = ExtResource("6_tiqyq")
-theme_override_font_sizes/font_size = 36
-text = "จงปรับเวลาให้ตรงกัน"
-horizontal_alignment = 1
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 72
 
-[node name="Clock" parent="." instance=ExtResource("2_0rlmo")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 106.0
-offset_top = 99.0
-offset_right = 526.0
-offset_bottom = 499.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Clock" parent="MarginContainer/HBoxContainer/Control" instance=ExtResource("2_0rlmo")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -170.0
+offset_right = 244.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.840001, 0.840001)
 clock_time = SubResource("Resource_swrio")
 interactable = false
 
-[node name="DigitalClockInput" parent="." instance=ExtResource("4_pwj1d")]
-layout_mode = 0
-offset_left = 591.0
-offset_top = 187.0
-offset_right = 861.0
-offset_bottom = 315.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_constants/separation = 16
+
+[node name="QuestionLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_tiqyq")
+theme_type_variation = &"SceneSubtitleLabel"
+text = "TestScene.ReadClockQuestion"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DigitalClockInput" parent="MarginContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("4_pwj1d")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -67.0
+offset_right = 135.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
 clock_time = SubResource("Resource_6ii5r")
 
-[node name="AnswerButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 593.0
-offset_top = 348.0
-offset_right = 868.0
-offset_bottom = 400.0
+[node name="AnswerButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("6_tiqyq")
-theme_override_font_sizes/font_size = 36
-text = "ส่งคำตอบ"
+text = "TestScene.SendAnswerButton"
 
-[connection signal="pressed" from="AnswerButton" to="." method="_on_answer_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/AnswerButton" to="." method="_on_answer_button_pressed"]

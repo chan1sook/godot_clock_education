@@ -5,8 +5,8 @@ extends Control
 @export var info_label: Label
 
 func _ready() -> void:
-	subtitle_label.text = Global.question_name
-	info_label.text = Global.question_description
+	subtitle_label.text = tr(Global.question_name)
+	info_label.text = tr(Global.question_description)
 
 func _on_start_button_pressed() -> void:
 	Global.on_change_scene.emit("test")

@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxg4ibvdyperd"]
+[gd_scene load_steps=5 format=3 uid="uid://dxg4ibvdyperd"]
 
 [ext_resource type="Script" uid="uid://62i12pnh0nnu" path="res://scenes/test_end_scene.gd" id="1_pgn5s"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_0yu1k"]
 [ext_resource type="PackedScene" uid="uid://cyq5q78exmhgs" path="res://resources/ui/chalkboard_confetti.tscn" id="4_0nugc"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_q8cad"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0nugc"]
 
 [node name="TestEndScene" type="Control" node_paths=PackedStringArray("subtitle_label", "score_label")]
 layout_mode = 3
@@ -15,79 +13,94 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pgn5s")
-subtitle_label = NodePath("PanelContainer/VBoxContainer/SubtitleLabel")
-score_label = NodePath("PanelContainer/VBoxContainer/ScoreLabel")
+subtitle_label = NodePath("MarginContainer/VBoxContainer2/SubtitleLabel")
+score_label = NodePath("MarginContainer/VBoxContainer2/ScoreLabel")
+metadata/_edit_lock_ = true
 
 [node name="Background" parent="." instance=ExtResource("2_0yu1k")]
 layout_mode = 1
+metadata/_edit_lock_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="ChalkboardConfetti" parent="." instance=ExtResource("4_0nugc")]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -338.0
-offset_top = 108.0
-offset_right = 332.0
-offset_bottom = 365.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_0nugc")
+grow_vertical = 2
+metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 48
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
 theme = ExtResource("4_q8cad")
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("4_q8cad")
-theme_override_font_sizes/font_size = 56
-text = "จบการทดสอบ"
+theme_type_variation = &"SceneTitleLabel"
+text = "TestEndScene.TitleLabel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SubtitleLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="SubtitleLabel" type="Label" parent="MarginContainer/VBoxContainer2"]
+auto_translate_mode = 2
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("4_q8cad")
-theme_override_font_sizes/font_size = 48
-text = "จบการทดสอบ"
+theme_type_variation = &"SceneSubtitleLabel"
+text = "<Value: ...>"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer2"]
+auto_translate_mode = 2
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 theme = ExtResource("4_q8cad")
 theme_override_font_sizes/font_size = 64
 text = "30/30"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 289.0
-offset_top = 450.0
-offset_right = 877.0
-offset_bottom = 506.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
 theme = ExtResource("4_q8cad")
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="RetryButton" type="Button" parent="HBoxContainer"]
+[node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_q8cad")
 theme_override_font_sizes/font_size = 36
-text = "เริ่มใหม่"
+text = "TestEndScene.RestartButton"
 
-[node name="BackButton" type="Button" parent="HBoxContainer"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_q8cad")
 theme_override_font_sizes/font_size = 36
-text = "เมนูหลัก"
+text = "TestEndScene.HomeButton"
 
-[node name="ChalkboardConfetti" parent="." instance=ExtResource("4_0nugc")]
-
-[connection signal="pressed" from="HBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/HBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxkhtity3qsgv"]
+[gd_scene load_steps=9 format=3 uid="uid://bxkhtity3qsgv"]
 
 [ext_resource type="Script" uid="uid://cwu2tfh4wwisj" path="res://scenes/home_scene.gd" id="1_srw65"]
 [ext_resource type="PackedScene" uid="uid://df8vciu352ii4" path="res://resources/ui/hill_background.tscn" id="2_h6e3e"]
-[ext_resource type="PackedScene" uid="uid://bdpjjmd0vuiy1" path="res://scenes/clock_playground_scene.tscn" id="2_mdovq"]
 [ext_resource type="PackedScene" uid="uid://qgahrvgwcak6" path="res://resources/sprites/student_sprite.tscn" id="3_oa1go"]
-[ext_resource type="PackedScene" uid="uid://cofhrjy74btwv" path="res://scenes/test_setting_scene.tscn" id="3_ofjoh"]
-[ext_resource type="PackedScene" uid="uid://b1be2ue70phpn" path="res://scenes/credit_scene.tscn" id="3_ua24n"]
 [ext_resource type="PackedScene" uid="uid://cw302jisen0x5" path="res://resources/ui/clock_tower.tscn" id="4_n5886"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_r7vl2"]
 
@@ -203,9 +200,6 @@ student_into_sprites = [NodePath("Student1"), NodePath("Student2")]
 student_intro_tween = [NodePath("IntroRefPoints/Student1Tween"), NodePath("IntroRefPoints/Student2Tween")]
 student_intro_delay = Array[float]([0.0, 0.4])
 student_idle_tween = [NodePath("IdleRefPoints/Student1Tween"), NodePath("IdleRefPoints/Student2Tween")]
-clock_playground_scene = ExtResource("2_mdovq")
-test_scene = ExtResource("3_ofjoh")
-credit_scene = ExtResource("3_ua24n")
 animation_player = NodePath("AnimationPlayer")
 version_label = NodePath("VersionLabel")
 
@@ -253,55 +247,72 @@ gender = "Girl"
 
 [node name="BtnVBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-offset_left = 513.0
-offset_top = 268.0
-offset_right = 985.0
-offset_bottom = 586.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -30.0
+offset_right = 467.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="StoryModeButton" type="Button" parent="BtnVBoxContainer"]
-visible = false
-layout_mode = 2
-theme = ExtResource("4_r7vl2")
-theme_override_font_sizes/font_size = 36
-disabled = true
-text = "ฝึกสอน"
-
 [node name="FreeModeButton" type="Button" parent="BtnVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_r7vl2")
 theme_override_font_sizes/font_size = 36
-text = "เล่นนาฬิกา"
+text = "ClockPlaygroundScene.HomeButton"
+text_overrun_behavior = 1
 
 [node name="TrialModeButton" type="Button" parent="BtnVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_r7vl2")
 theme_override_font_sizes/font_size = 36
-text = "ทดสอบ"
+text = "TestScene.HomeButton"
+text_overrun_behavior = 1
 
-[node name="CreditButton" type="Button" parent="BtnVBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BtnVBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SettingButton" type="Button" parent="BtnVBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("4_r7vl2")
 theme_override_font_sizes/font_size = 36
-text = "ผู้จัดทำ"
+text = "SettingScene.HomeButton"
+text_overrun_behavior = 1
+
+[node name="CreditButton" type="Button" parent="BtnVBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_r7vl2")
+theme_override_font_sizes/font_size = 36
+text = "CreditScene.HomeButton"
+text_overrun_behavior = 1
 
 [node name="ExitButton" type="Button" parent="BtnVBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_r7vl2")
+theme_type_variation = &"PurpleButton"
 theme_override_font_sizes/font_size = 36
-text = "ออกจากเกม"
+text = "Game.Exit.HomeButton"
+text_overrun_behavior = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0.211765)
 layout_mode = 0
 offset_left = 421.0
-offset_top = 68.0
+offset_top = 104.0
 offset_right = 1018.0
-offset_bottom = 259.0
+offset_bottom = 229.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -320,18 +331,13 @@ layout_mode = 2
 theme = ExtResource("4_r7vl2")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "หนูจ๋า เวลาเท่าไร"
-
-[node name="SubtitleLabel" type="Label" parent="PanelContainer/MarginContainer/TitleVBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_r7vl2")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "What time is it?"
+text = "Game.Title.HomeLabel"
+clip_text = true
 
 [node name="ClockTower" parent="." instance=ExtResource("4_n5886")]
 
 [node name="VersionLabel" type="Label" parent="."]
+auto_translate_mode = 2
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -355,5 +361,6 @@ libraries = {
 
 [connection signal="pressed" from="BtnVBoxContainer/FreeModeButton" to="." method="_on_free_mode_button_pressed"]
 [connection signal="pressed" from="BtnVBoxContainer/TrialModeButton" to="." method="_on_trial_mode_button_pressed"]
-[connection signal="pressed" from="BtnVBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="BtnVBoxContainer/HBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="BtnVBoxContainer/HBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="BtnVBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

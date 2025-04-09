@@ -4,36 +4,21 @@ class_name DigitalToClockChoiceQuestionNode
 
 signal choose_answer_result(correct: bool, choice: ClockTimeResource)
 
-@onready var _question_time_label = $QuestionTimeLabel
-@onready var _clock_a = $HBoxContainer/VBoxContainerA/Control/Clock
-@onready var _clock_b = $HBoxContainer/VBoxContainerB/Control/Clock
-@onready var _clock_c = $HBoxContainer/VBoxContainerC/Control/Clock
-@onready var _clock_d = $HBoxContainer/VBoxContainerD/Control/Clock
+@export var question_time_label: Label
+@export var clocks: Array[ClockNode]
 
 var _choices: Array[ClockTimeResource] = []
 var _answer_at: int = -1
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func register_question(choice: Array[ClockTimeResource], answer_at: int) -> void:
 	_choices = choice
 	_answer_at = answer_at
 	_render_question()
-	pass
 
 func _render_question() -> void:
-	_question_time_label.text = str(_choices[_answer_at])
-	_clock_a.clock_time =  _choices[0]
-	_clock_b.clock_time =  _choices[1]
-	_clock_c.clock_time =  _choices[2]
-	_clock_d.clock_time =  _choices[3]
-	pass
+	question_time_label.text = str(_choices[_answer_at])
+	for i in range(clocks.size()):
+		clocks[i].clock_time = _choices[i]
 	
 func _format_clock_str(time: ClockTimeResource) -> String:
 	return str(time)

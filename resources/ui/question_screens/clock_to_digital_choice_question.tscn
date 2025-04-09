@@ -10,7 +10,7 @@ script = ExtResource("3_86jk6")
 hour = 0
 minute = 0
 
-[node name="ClockToDigitalChoiceQuestion" type="Control"]
+[node name="ClockToDigitalChoiceQuestion" type="Control" node_paths=PackedStringArray("question_clock", "answer_buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,71 +18,91 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0p022")
+question_clock = NodePath("MarginContainer/HBoxContainer/Control/Clock")
+answer_buttons = [NodePath("MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerAButton"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerBButton"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerCButton"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerDButton")]
 
-[node name="Clock" parent="." instance=ExtResource("2_hcrdt")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 116.0
-offset_top = 176.0
-offset_right = 516.0
-offset_bottom = 576.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 72
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Clock" parent="MarginContainer/HBoxContainer/Control" instance=ExtResource("2_hcrdt")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -153.0
+offset_right = 247.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.759999, 0.759999)
 clock_time = SubResource("Resource_cvvhq")
 interactable = false
 
-[node name="AnswerButtonVContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = 192.0
-offset_right = 460.0
-offset_bottom = -162.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_constants/separation = 32
+
+[node name="QuestionLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_4aj0v")
+theme_type_variation = &"SceneSubtitleLabel"
+text = "TestScene.ReadClockChoiceQuestion"
+horizontal_alignment = 1
+
+[node name="AnswerButtonVContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="ButtonA" type="Button" parent="AnswerButtonVContainer"]
+[node name="AnswerAButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer"]
+auto_translate_mode = 2
 layout_mode = 2
 theme = ExtResource("4_4aj0v")
-theme_override_font_sizes/font_size = 36
-text = "ก. 11:22"
+text = "<Value:ก. 11:22>"
 
-[node name="ButtonB" type="Button" parent="AnswerButtonVContainer"]
+[node name="AnswerBButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer"]
+auto_translate_mode = 2
 layout_mode = 2
 theme = ExtResource("4_4aj0v")
-theme_override_font_sizes/font_size = 36
-text = "ข. 11:22"
+text = "<Value:ก. 11:22>"
 
-[node name="ButtonC" type="Button" parent="AnswerButtonVContainer"]
+[node name="AnswerCButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer"]
+auto_translate_mode = 2
 layout_mode = 2
 theme = ExtResource("4_4aj0v")
-theme_override_font_sizes/font_size = 36
-text = "ค. 11:22"
+text = "<Value:ก. 11:22>"
 
-[node name="ButtonD" type="Button" parent="AnswerButtonVContainer"]
+[node name="AnswerDButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer"]
+auto_translate_mode = 2
 layout_mode = 2
 theme = ExtResource("4_4aj0v")
-theme_override_font_sizes/font_size = 36
-text = "ง. 11:22"
+text = "<Value:ก. 11:22>"
 
-[node name="QuestionLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 575.0
-offset_top = 107.0
-offset_right = 981.0
-offset_bottom = 151.0
-theme = ExtResource("4_4aj0v")
-theme_override_font_sizes/font_size = 36
-text = "เวลาข้อใดที่ตรงกับนนาฬิกานี้"
-
-[connection signal="pressed" from="AnswerButtonVContainer/ButtonA" to="." method="_on_button_a_pressed"]
-[connection signal="pressed" from="AnswerButtonVContainer/ButtonB" to="." method="_on_button_b_pressed"]
-[connection signal="pressed" from="AnswerButtonVContainer/ButtonC" to="." method="_on_button_c_pressed"]
-[connection signal="pressed" from="AnswerButtonVContainer/ButtonD" to="." method="_on_button_d_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerAButton" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerBButton" to="." method="_on_button_b_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerCButton" to="." method="_on_button_c_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/AnswerButtonVContainer/AnswerDButton" to="." method="_on_button_d_pressed"]

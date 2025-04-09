@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b723on8nvftof"]
+
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_8jf7n"]
+
+[node name="BasicButton" type="Button"]
+theme = ExtResource("1_8jf7n")
+theme_override_font_sizes/font_size = 36
+text = "ก. 11:22"

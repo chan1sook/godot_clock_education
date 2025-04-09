@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctvrf3rxaiyc1"]
+
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="1_jflkd"]
+
+[node name="BackButton" type="Button"]
+custom_minimum_size = Vector2(180, 0)
+offset_right = 180.0
+offset_bottom = 51.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_jflkd")
+theme_type_variation = &"PurpleButton"
+text = "Game.BackButton"
+text_overrun_behavior = 1

@@ -5,7 +5,7 @@ func _on_back_button_pressed() -> void:
 
 func _to_test_scene() -> void:
 	Global.on_change_scene.emit("test_prepare")
-	
+
 func _on_level_1_button_pressed() -> void:
 	var test_question : Array[QuestionScheme] = []
 	var question_type = QuestionScheme.QuestionType.CLOCK_TO_DIGITAL_CHOICE
@@ -16,8 +16,8 @@ func _on_level_1_button_pressed() -> void:
 			QuestionScheme.new(question_type, i, timeout),
 		])
 	Global.test_questions = test_question
-	Global.question_name = "อ่านนาฬิกาเข็ม"
-	Global.question_description = "มีนาฬิกาเข็มเรือนหนึ่งตั้งอยู่\nเลือกคำตอบเวลาที่ถูกต้องเพียงหนึ่งเดียวจากคำตอบ 4 ตัวเลือก"
+	Global.question_name = "TestPrepareScene.ReadClockChooseTitle"
+	Global.question_description = "TestPrepareScene.ReadClockChooseInfo"
 	_to_test_scene()
 
 
@@ -31,8 +31,8 @@ func _on_level_2_button_pressed() -> void:
 			QuestionScheme.new(question_type, i, timeout),
 		])
 	Global.test_questions = test_question
-	Global.question_name = "เทียบนาฬิกาเข็ม"
-	Global.question_description = "เลือกนาฬิกาที่เวลาถูกต้องกับข้อความที่แสดงพียงหนึ่งเดียวจากนาฬิกา 4 เรือน"
+	Global.question_name = "TestPrepareScene.AdjustClockChooseTitle"
+	Global.question_description = "TestPrepareScene.AdjustClockChooseInfo"
 	_to_test_scene()
 
 
@@ -46,8 +46,8 @@ func _on_level_3_button_pressed() -> void:
 			QuestionScheme.new(question_type, i, timeout),
 		])
 	Global.test_questions = test_question
-	Global.question_name = "ตั้งนาฬิกาดิจิตอล"
-	Global.question_description = "มีนาฬิกาเข็มเรือนหนึ่งตั้งอยู่\nให้ตั้งนาฬิกาดิจิทัลให้เวลาตรงกับเรือนแรก"
+	Global.question_name = "TestPrepareScene.ReadClockTitle"
+	Global.question_description = "TestPrepareScene.ReadClockInfo"
 	_to_test_scene()
 
 
@@ -61,8 +61,8 @@ func _on_level_4_button_pressed() -> void:
 			QuestionScheme.new(question_type, i, timeout),
 		])
 	Global.test_questions = test_question
-	Global.question_name = "ตั้งนาฬิกาเข็ม"
-	Global.question_description = "มีนาฬิกาดิจิทัลหนึ่งตั้งอยู่\nให้ตั้งนาฬิกาเข็มเรือนให้เวลาตรงกับเรือนแรก"
+	Global.question_name = "TestPrepareScene.AdjustClockTitle"
+	Global.question_description = "TestPrepareScene.AdjustClockInfo"
 	_to_test_scene()
 
 func _get_default_time(type: QuestionScheme.QuestionType) -> float:

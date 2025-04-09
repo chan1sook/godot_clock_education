@@ -72,3 +72,6 @@ func _on_trial_mode_button_pressed() -> void:
 
 func _on_credit_button_pressed() -> void:
 	Global.on_change_scene.emit("credit")
+	
+func _on_setting_button_pressed() -> void:
+	Global.on_change_scene.emit("setting")

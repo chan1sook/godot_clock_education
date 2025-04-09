@@ -98,6 +98,7 @@ func _on_question_timer_timeout() -> void:
 	_new_question()
 
 func _on_choose_answer_result(correct: bool, answer: ClockTimeResource) -> void:
+	print_debug(answer.to_string(), " => ", correct)
 	if correct:
 		_score += 1
 	else:

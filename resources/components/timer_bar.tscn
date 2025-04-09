@@ -22,6 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="HBoxContainer"]
+auto_translate_mode = 2
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme = ExtResource("1_fxcj2")

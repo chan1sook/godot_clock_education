@@ -10,56 +10,89 @@ script = ExtResource("3_8fq6i")
 hour = 8
 minute = 0
 
-[node name="DigitalToClockQuestion" type="Control"]
+[node name="DigitalToClockQuestion" type="Control" node_paths=PackedStringArray("question_time_label", "answer_clock")]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 55.0
-offset_top = 58.0
-offset_right = 1099.0
-offset_bottom = 620.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_3ehnr")
+question_time_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/QuestionTimeLabel")
+answer_clock = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/Control/Clock")
 
-[node name="Clock" parent="." instance=ExtResource("1_wq0if")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 576.0
-offset_top = 33.0
-offset_right = 976.0
-offset_bottom = 433.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 72
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("5_3mkvq")
+theme_type_variation = &"SceneSubtitleLabel"
+text = "TestScene.AdjustClockQuestion"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="QuestionTimeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+auto_translate_mode = 2
+layout_mode = 2
+theme = ExtResource("5_3mkvq")
+theme_type_variation = &"SceneTitleLabel"
+text = "12:00"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_constants/separation = 16
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Clock" parent="MarginContainer/HBoxContainer/VBoxContainer2/Control" instance=ExtResource("1_wq0if")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.96, 0.96)
 clock_time = SubResource("Resource_evwp3")
 
-[node name="QuestionLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 161.0
-offset_top = 168.0
-offset_right = 407.0
-offset_bottom = 213.0
+[node name="AnswerButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("5_3mkvq")
-theme_override_font_sizes/font_size = 36
-text = "จงตั้งเวลาให้ตรง"
+text = "TestScene.SendAnswerButton"
 
-[node name="QuestionTimeLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 200.0
-offset_top = 237.0
-offset_right = 358.0
-offset_bottom = 314.0
-theme = ExtResource("5_3mkvq")
-theme_override_font_sizes/font_size = 64
-text = "12:00"
-
-[node name="AnswerButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 645.0
-offset_top = 447.0
-offset_right = 882.0
-offset_bottom = 499.0
-theme = ExtResource("5_3mkvq")
-theme_override_font_sizes/font_size = 36
-text = "ส่งคำตอบ"
-
-[connection signal="pressed" from="AnswerButton" to="." method="_on_answer_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/AnswerButton" to="." method="_on_answer_button_pressed"]

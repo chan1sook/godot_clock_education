@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0
+- Add English Language
+  - Default language is Thai
+  - Read time feature still be Thai Language
+
 ## 0.1.3
 - Update Decoration in all page
 
