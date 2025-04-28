@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd2u1m1pxuk1w"]
+[gd_scene load_steps=12 format=3 uid="uid://dd2u1m1pxuk1w"]
 
 [ext_resource type="Script" uid="uid://cu1173ppdsvx5" path="res://main_scene.gd" id="1_w2twt"]
 [ext_resource type="PackedScene" uid="uid://bxkhtity3qsgv" path="res://scenes/home_scene.tscn" id="2_pw63i"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxg4ibvdyperd" path="res://scenes/test_end_scene.tscn" id="8_mo76n"]
 [ext_resource type="PackedScene" uid="uid://dx1auubj50n1j" path="res://scenes/debug_scene.tscn" id="9_7ycvg"]
 [ext_resource type="PackedScene" uid="uid://dt6auan5cmt0d" path="res://scenes/setting_scene.tscn" id="10_wr18j"]
+[ext_resource type="PackedScene" uid="uid://c0v80dmnttuey" path="res://scenes/read_clock_scene.tscn" id="11_qwutr"]
 
 [node name="MainScene" type="Node" node_paths=PackedStringArray("scene_node")]
 script = ExtResource("1_w2twt")
@@ -18,6 +19,7 @@ scenes = {
 &"credit": ExtResource("3_66tet"),
 &"debug": ExtResource("9_7ycvg"),
 &"home": ExtResource("2_pw63i"),
+&"read_clock": ExtResource("11_qwutr"),
 &"setting": ExtResource("10_wr18j"),
 &"test": ExtResource("7_671wp"),
 &"test_end": ExtResource("8_mo76n"),

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://b0x8gsl2dugwi"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_g4f64"]
+[ext_resource type="AudioStream" uid="uid://oujfedpngr3" path="res://assets/voices/en/230_en_thirty.mp3" id="2_g4f64"]
+
+[resource]
+script = ExtResource("1_g4f64")
+voice = ExtResource("2_g4f64")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

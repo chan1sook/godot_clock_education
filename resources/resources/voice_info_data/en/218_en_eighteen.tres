@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://dnxh45y6b5i5w"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_6yvvf"]
+[ext_resource type="AudioStream" uid="uid://bs57xtt6cs2ob" path="res://assets/voices/en/218_en_eighteen.mp3" id="2_6yvvf"]
+
+[resource]
+script = ExtResource("1_6yvvf")
+voice = ExtResource("2_6yvvf")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

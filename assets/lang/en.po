@@ -58,20 +58,12 @@ msgid "ClockPlaygroundScene.TitleLabel"
 msgstr "Clock Playground"
 
 #: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.InformalTextButton"
-msgstr "Informal"
-
-#: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.FormalTextButton"
-msgstr "Formal"
+msgid "ClockPlaygroundScene.ReadClockSceneButton"
+msgstr "Read Time"
 
 #: scenes/clock_playground_scene.tscn
 msgid "ClockPlaygroundScene.SyncTimeButton"
 msgstr "Sync clock to system time"
-
-#: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.SpeakButton"
-msgstr "Read text"
 
 #: scenes/credit_scene.tscn
 msgid "CreditScene.TitleLabel"
@@ -233,3 +225,21 @@ msgstr "Adjust Analog Clock"
 #: extra_translations.gd
 msgid "TestPrepareScene.AdjustClockInfo"
 msgstr "Adjust analog clock from digital clock."
+
+#: scenes/read_clock_scene.tscn
+msgid "ReadClockScene.TitleLabel"
+msgstr "Read Time"
+
+#: resources/components/read_clock_node.gd
+msgid "ReadClockScene.ReadButton"
+msgstr "Read"
+
+#: resources/components/read_clock_node.gd
+msgid "ReadClockScene.ReadingButton"
+msgstr "Reading"
+
+#~ msgid "ClockPlaygroundScene.InformalTextButton"
+#~ msgstr "Informal"
+
+#~ msgid "ClockPlaygroundScene.FormalTextButton"
+#~ msgstr "Formal"

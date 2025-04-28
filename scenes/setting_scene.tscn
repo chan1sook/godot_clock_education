@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_6whhp"]
 [ext_resource type="PackedScene" uid="uid://ctvrf3rxaiyc1" path="res://resources/ui/back_button.tscn" id="4_6whhp"]
 
-[node name="SettingScene" type="Control" node_paths=PackedStringArray("language_label", "language_item_list")]
+[node name="SettingScene" type="Control" node_paths=PackedStringArray("language_flag_container", "language_flag", "language_label", "language_item_list")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m6lu0")
-language_label = NodePath("SettingPanel/VBoxContainer/HBoxContainer/CurrentLanguageNameLabel")
+language_flag_container = NodePath("SettingPanel/VBoxContainer/HBoxContainer/HBoxContainer/FlagContainer")
+language_flag = NodePath("SettingPanel/VBoxContainer/HBoxContainer/HBoxContainer/FlagContainer/FlagRect")
+language_label = NodePath("SettingPanel/VBoxContainer/HBoxContainer/HBoxContainer/CurrentLanguageNameLabel")
 language_item_list = NodePath("SettingPanel/VBoxContainer/LanguageItemList")
 metadata/_edit_lock_ = true
 
@@ -58,12 +60,26 @@ text = "SettingScene.CurrentLanguageLabel"
 horizontal_alignment = 1
 autowrap_mode = 1
 
-[node name="CurrentLanguageNameLabel" type="Label" parent="SettingPanel/VBoxContainer/HBoxContainer"]
-auto_translate_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingPanel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
 size_flags_stretch_ratio = 3.0
+alignment = 1
+
+[node name="FlagContainer" type="MarginContainer" parent="SettingPanel/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="FlagRect" type="TextureRect" parent="SettingPanel/VBoxContainer/HBoxContainer/HBoxContainer/FlagContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CurrentLanguageNameLabel" type="Label" parent="SettingPanel/VBoxContainer/HBoxContainer/HBoxContainer"]
+auto_translate_mode = 2
+layout_mode = 2
 theme = ExtResource("1_2bek4")
 text = "<Value:English>"
 horizontal_alignment = 1
@@ -77,6 +93,7 @@ size_flags_vertical = 3
 theme = ExtResource("1_2bek4")
 allow_search = false
 item_count = 1
+fixed_icon_size = Vector2i(32, 32)
 item_0/text = "<Value:English>"
 
 [node name="BackButton" parent="." instance=ExtResource("4_6whhp")]

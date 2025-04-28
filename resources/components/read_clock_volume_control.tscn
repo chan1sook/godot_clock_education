@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnn11brlgycqw"]
+
+[ext_resource type="Texture2D" uid="uid://dobbj1q5ryjts" path="res://assets/images/volumes/volume_full.png" id="1_benob"]
+[ext_resource type="Script" uid="uid://gi2sj2wde8vc" path="res://resources/components/read_clock_volume_control.gd" id="1_m8jas"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_m8jas"]
+[ext_resource type="Texture2D" uid="uid://b4613xcs0ne0x" path="res://assets/images/volumes/volume_medium.png" id="3_qd0bx"]
+[ext_resource type="Texture2D" uid="uid://p202vytbvtkb" path="res://assets/images/volumes/volume_low.png" id="4_mt7mk"]
+[ext_resource type="Texture2D" uid="uid://my87wmua5jm3" path="res://assets/images/volumes/volume_off.png" id="5_r87bp"]
+
+[node name="ReadClockVolumeControl" type="VBoxContainer" node_paths=PackedStringArray("icon_rect", "slider", "percent_label")]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 293.0
+alignment = 1
+script = ExtResource("1_m8jas")
+volume_full_texture = ExtResource("1_benob")
+volume_medium_texture = ExtResource("3_qd0bx")
+volume_low_texture = ExtResource("4_mt7mk")
+volume_off_texture = ExtResource("5_r87bp")
+icon_rect = NodePath("IconRect")
+slider = NodePath("VolumeSlider")
+percent_label = NodePath("VolumePercent")
+
+[node name="IconRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_benob")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="VolumeSlider" type="VSlider" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+value = 50.0
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="VolumePercent" type="Label" parent="."]
+auto_translate_mode = 2
+layout_mode = 2
+theme = ExtResource("2_m8jas")
+text = "100%"
+horizontal_alignment = 1
+clip_text = true
+
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_value_changed"]

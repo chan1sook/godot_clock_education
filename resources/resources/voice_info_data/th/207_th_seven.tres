@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://q2jpnetvgf1s"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_xyrw5"]
+[ext_resource type="AudioStream" uid="uid://yipvhg8uldgn" path="res://assets/voices/th/207_th_seven.mp3" id="2_xyrw5"]
+
+[resource]
+script = ExtResource("1_xyrw5")
+voice = ExtResource("2_xyrw5")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

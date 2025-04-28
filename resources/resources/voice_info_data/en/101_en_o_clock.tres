@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://c5kjqperiu8st"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_csrac"]
+[ext_resource type="AudioStream" uid="uid://b5gmbmx1k8q0h" path="res://assets/voices/en/101_en_o_clock.mp3" id="2_csrac"]
+
+[resource]
+script = ExtResource("1_csrac")
+voice = ExtResource("2_csrac")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

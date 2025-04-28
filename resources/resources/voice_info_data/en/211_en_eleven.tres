@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://vr4jkorcgd3u"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_rl8y0"]
+[ext_resource type="AudioStream" uid="uid://d2e1i6jfwbe4x" path="res://assets/voices/en/211_en_eleven.mp3" id="2_rl8y0"]
+
+[resource]
+script = ExtResource("1_rl8y0")
+voice = ExtResource("2_rl8y0")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

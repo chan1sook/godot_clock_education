@@ -1,37 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://bdpjjmd0vuiy1"]
+[gd_scene load_steps=12 format=3 uid="uid://bdpjjmd0vuiy1"]
 
 [ext_resource type="Script" uid="uid://cecmxf2qukiji" path="res://scenes/clock_playground_scene.gd" id="1_n7vmu"]
 [ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_64u0i"]
 [ext_resource type="PackedScene" uid="uid://dpxld06johs05" path="res://resources/components/clock.tscn" id="2_lgkt2"]
 [ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="2_qiuj0"]
-[ext_resource type="Script" uid="uid://bt8oofm2jelki" path="res://resources/nodes/clock_time_resource.gd" id="3_iqbgd"]
+[ext_resource type="Script" uid="uid://bt8oofm2jelki" path="res://resources/resources/clock_time_resource.gd" id="3_iqbgd"]
 [ext_resource type="PackedScene" uid="uid://c0d1gmgn30uwf" path="res://resources/components/digital_clock_input.tscn" id="3_wj7y3"]
-[ext_resource type="AudioStream" uid="uid://cpksh6vlchetp" path="res://assets/voices/02_th_two.mp3" id="4_rgfy8"]
-[ext_resource type="AudioStream" uid="uid://v6r76sxaxy2b" path="res://assets/voices/03_th_three.mp3" id="5_wiy1n"]
-[ext_resource type="AudioStream" uid="uid://bv3tlvwadok3i" path="res://assets/voices/04_th_four.mp3" id="6_j8k2l"]
-[ext_resource type="AudioStream" uid="uid://4ila5b2gbhri" path="res://assets/voices/05_th_five.mp3" id="7_cwrsa"]
-[ext_resource type="AudioStream" uid="uid://icd4ql7omfe0" path="res://assets/voices/01_th_one.mp3" id="7_flpv1"]
-[ext_resource type="AudioStream" uid="uid://cccwew7812i25" path="res://assets/voices/06_th_six.mp3" id="8_bi5h2"]
-[ext_resource type="AudioStream" uid="uid://qwn7ukkspuwl" path="res://assets/voices/07_th_seven.mp3" id="9_p27qu"]
-[ext_resource type="AudioStream" uid="uid://bo56famp1o716" path="res://assets/voices/08_th_eight.mp3" id="10_urald"]
-[ext_resource type="AudioStream" uid="uid://c0kci1w0ou3xb" path="res://assets/voices/09_th_nine.mp3" id="11_jsaw3"]
-[ext_resource type="AudioStream" uid="uid://d0umpx5na20i8" path="res://assets/voices/10_th_ten.mp3" id="12_lj6pk"]
-[ext_resource type="AudioStream" uid="uid://gswb0ag03kbr" path="res://assets/voices/12_th_twenty.mp3" id="13_otscx"]
-[ext_resource type="AudioStream" uid="uid://d3l5wbt5mep0f" path="res://assets/voices/11_th_one_eleven.mp3" id="14_2kqm8"]
-[ext_resource type="AudioStream" uid="uid://c83mtmfyu4yo5" path="res://assets/voices/13_th_hour.mp3" id="15_bobvu"]
-[ext_resource type="AudioStream" uid="uid://boqm4lp6h4qsx" path="res://assets/voices/14_th_minute.mp3" id="16_h2vej"]
-[ext_resource type="AudioStream" uid="uid://c1g6qcfjem5yx" path="res://assets/voices/15_th_night_unit.mp3" id="17_n01bl"]
-[ext_resource type="AudioStream" uid="uid://dnot88owxqocv" path="res://assets/voices/22_th_night.mp3" id="18_8i8lw"]
-[ext_resource type="AudioStream" uid="uid://duqseov4gmqcd" path="res://assets/voices/21_th_day.mp3" id="19_qneq5"]
-[ext_resource type="AudioStream" uid="uid://b000j3sqxb6aq" path="res://assets/voices/17_th_dawn.mp3" id="20_24psv"]
-[ext_resource type="AudioStream" uid="uid://bvqr0mms60i8f" path="res://assets/voices/18_th_dusk.mp3" id="21_k4bwn"]
-[ext_resource type="AudioStream" uid="uid://bi2ukc4dv8a45" path="res://assets/voices/24_th_clock_zero.mp3" id="22_5156c"]
-[ext_resource type="AudioStream" uid="uid://c3v08i4d012pd" path="res://assets/voices/25_th_half.mp3" id="23_djnrs"]
-[ext_resource type="AudioStream" uid="uid://bot6s58kj1r5p" path="res://assets/voices/16_th_hour_unit.mp3" id="24_44e33"]
-[ext_resource type="AudioStream" uid="uid://b2p6as5w5r1cv" path="res://assets/voices/19_th_midnight_unit.mp3" id="25_d3x1b"]
-[ext_resource type="AudioStream" uid="uid://bl7hxji6mm0b" path="res://assets/voices/20_th_noon.mp3" id="26_sahqa"]
-[ext_resource type="AudioStream" uid="uid://hekdt65tevqi" path="res://assets/voices/23_th_noon_unit.mp3" id="27_y1xi1"]
-[ext_resource type="PackedScene" uid="uid://ef68ge1tpdju" path="res://resources/components/clock_voice_playback.tscn" id="28_f0tah"]
 [ext_resource type="PackedScene" uid="uid://ctvrf3rxaiyc1" path="res://resources/ui/back_button.tscn" id="33_akimw"]
 
 [sub_resource type="Resource" id="Resource_pfogv"]
@@ -48,7 +22,7 @@ minute = 36
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ek2t"]
 
-[node name="ClockPlaygroundScene" type="Control" node_paths=PackedStringArray("clock", "digital_clock_input", "sync_btn", "read_text_control", "read_text_label", "clock_voice_playback")]
+[node name="ClockPlaygroundScene" type="Control" node_paths=PackedStringArray("clock", "digital_clock_input", "sync_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,113 +32,14 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_n7vmu")
 start_time = SubResource("Resource_pfogv")
-voices_map = {
-"ครึ่ง": ExtResource("23_djnrs"),
-"คืน": ExtResource("18_8i8lw"),
-"ตรง": ExtResource("22_5156c"),
-"ตี": ExtResource("25_d3x1b"),
-"ทุ่ม": ExtResource("17_n01bl"),
-"นาที": ExtResource("16_h2vej"),
-"นาฬิกา": ExtResource("15_bobvu"),
-"บ่าย": ExtResource("27_y1xi1"),
-"ยี่": ExtResource("13_otscx"),
-"วัน": ExtResource("19_qneq5"),
-"สอง": ExtResource("4_rgfy8"),
-"สาม": ExtResource("5_wiy1n"),
-"สิบ": ExtResource("12_lj6pk"),
-"สี่": ExtResource("6_j8k2l"),
-"หก": ExtResource("8_bi5h2"),
-"หนึ่ง": ExtResource("7_flpv1"),
-"ห้า": ExtResource("7_cwrsa"),
-"เก้า": ExtResource("11_jsaw3"),
-"เจ็ด": ExtResource("9_p27qu"),
-"เช้า": ExtResource("20_24psv"),
-"เที่ยง": ExtResource("26_sahqa"),
-"เย็น": ExtResource("21_k4bwn"),
-"เอ็ด": ExtResource("14_2kqm8"),
-"แปด": ExtResource("10_urald"),
-"โมง": ExtResource("24_44e33")
-}
-clock = NodePath("Clock")
-digital_clock_input = NodePath("DigitalClockInput")
-sync_btn = NodePath("SyncTimeButton")
-read_text_control = NodePath("ReadTextControl")
-read_text_label = NodePath("ReadTextControl/ReadTextLabel")
-clock_voice_playback = NodePath("ClockVoicePlayback")
+clock = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Control/Clock")
+digital_clock_input = NodePath("MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput")
+sync_btn = NodePath("MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/SyncTimeButton")
 metadata/_edit_lock_ = true
-
-[node name="ClockVoicePlayback" parent="." instance=ExtResource("28_f0tah")]
-voice_word_offset = {
-"ครึ่ง": 0.0,
-"คืน": 0.0,
-"ตรง": 0.0,
-"ตี": -0.15,
-"ทุ่ม": 0.0,
-"นาที": 0.0,
-"นาฬิกา": 0.0,
-"บ่าย": -0.1,
-"ยี่": -0.09,
-"วัน": 0.0,
-"ศูนย์": -0.15,
-"สอง": -0.2,
-"สาม": -0.2,
-"สิบ": -0.05,
-"สี่": -0.2,
-"หก": 0.0,
-"หนึ่ง": -0.15,
-"ห้า": -0.15,
-"เก้า": -0.15,
-"เจ็ด": 0.0,
-"เที่ยง": -0.15,
-"เย็น": 0.0,
-"เอ็ด": -0.075,
-"แปด": -0.15,
-"โมง": -0.1
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="SilentTimer" type="Timer" parent="AudioStreamPlayer"]
-one_shot = true
 
 [node name="Background" parent="." instance=ExtResource("2_qiuj0")]
 layout_mode = 1
 metadata/_edit_lock_ = true
-
-[node name="Clock" parent="." instance=ExtResource("2_lgkt2")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 122.0
-offset_top = 157.0
-offset_right = 522.0
-offset_bottom = 557.0
-scale = Vector2(0.88, 0.88)
-clock_time = SubResource("Resource_pfead")
-
-[node name="DigitalClockInput" parent="." instance=ExtResource("3_wj7y3")]
-layout_mode = 2
-offset_left = 649.0
-offset_top = 169.0
-offset_right = 925.0
-offset_bottom = 314.0
-scale = Vector2(1.4, 1.4)
-
-[node name="PanelContainer" parent="DigitalClockInput/HourInput" index="1"]
-theme_override_styles/panel = SubResource("StyleBoxEmpty_b2ub0")
-
-[node name="HourLabel" parent="DigitalClockInput/HourInput/PanelContainer" index="0"]
-theme_override_font_sizes/font_size = 72
-
-[node name="Label" parent="DigitalClockInput" index="1"]
-theme_override_font_sizes/font_size = 72
-
-[node name="PanelContainer" parent="DigitalClockInput/MinuteInput" index="1"]
-theme_override_styles/panel = SubResource("StyleBoxEmpty_5ek2t")
-
-[node name="MinuteLabel" parent="DigitalClockInput/MinuteInput/PanelContainer" index="0"]
-theme_override_font_sizes/font_size = 72
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -173,9 +48,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 96
+theme_override_constants/margin_left = 72
 theme_override_constants/margin_top = 48
-theme_override_constants/margin_right = 96
+theme_override_constants/margin_right = 72
 theme_override_constants/margin_bottom = 48
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -190,86 +65,92 @@ text = "ClockPlaygroundScene.TitleLabel"
 horizontal_alignment = 1
 text_overrun_behavior = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 634.0
-offset_top = 416.0
-offset_right = 1008.0
-offset_bottom = 467.0
-alignment = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="ReadTimeInformalButton" type="Button" parent="HBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 8
-theme = ExtResource("2_64u0i")
-text = "ClockPlaygroundScene.InformalTextButton"
-text_overrun_behavior = 1
+mouse_filter = 1
 
-[node name="ReadTimeFormalButton" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-theme = ExtResource("2_64u0i")
-text = "ClockPlaygroundScene.FormalTextButton"
-text_overrun_behavior = 1
-
-[node name="SyncTimeButton" type="Button" parent="."]
-custom_minimum_size = Vector2(50, 0)
+[node name="Clock" parent="MarginContainer/VBoxContainer/HBoxContainer/Control" instance=ExtResource("2_lgkt2")]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -81.0
-offset_right = 476.0
-offset_bottom = -30.0
-grow_vertical = 0
-size_flags_horizontal = 8
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.88, 0.88)
+clock_time = SubResource("Resource_pfead")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.25
+theme_override_constants/separation = 16
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="DigitalClockInput" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("3_wj7y3")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -97.0
+offset_right = 82.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+
+[node name="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput/HourInput" index="1"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b2ub0")
+
+[node name="HourLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput/HourInput/PanelContainer" index="0"]
+theme_override_font_sizes/font_size = 72
+
+[node name="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput" index="1"]
+theme_override_font_sizes/font_size = 72
+
+[node name="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput/MinuteInput" index="1"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5ek2t")
+
+[node name="MinuteLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput/MinuteInput/PanelContainer" index="0"]
+theme_override_font_sizes/font_size = 72
+
+[node name="ReadClockSceneButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = ExtResource("2_64u0i")
+text = "ClockPlaygroundScene.ReadClockSceneButton"
+text_overrun_behavior = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SyncTimeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_64u0i")
+theme_type_variation = &"PurpleButton"
 toggle_mode = true
 text = "ClockPlaygroundScene.SyncTimeButton"
-text_overrun_behavior = 1
-
-[node name="ReadTextControl" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 507.0
-offset_top = 491.0
-offset_right = 1121.0
-offset_bottom = 597.0
-
-[node name="ReadTextLabel" type="Label" parent="ReadTextControl"]
-auto_translate_mode = 2
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -299.0
-offset_right = 299.0
-offset_bottom = 44.0
-grow_horizontal = 2
-theme = ExtResource("2_64u0i")
-text = "<Value:แปดนาฬิกา>"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SpeakClockTextButton" type="Button" parent="ReadTextControl"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -122.0
-offset_top = -51.0
-offset_right = 122.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 8
-theme = ExtResource("2_64u0i")
-text = "ClockPlaygroundScene.SpeakButton"
 text_overrun_behavior = 1
 
 [node name="BackButton" parent="." instance=ExtResource("33_akimw")]
@@ -279,12 +160,10 @@ offset_top = 30.0
 offset_right = 210.0
 offset_bottom = 81.0
 
-[connection signal="time_changed" from="Clock" to="." method="_on_clock_time_changed"]
-[connection signal="time_changed" from="DigitalClockInput" to="." method="_on_digital_clock_input_time_changed"]
-[connection signal="pressed" from="HBoxContainer/ReadTimeInformalButton" to="." method="_on_read_time_informal_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/ReadTimeFormalButton" to="." method="_on_read_time_formal_button_pressed"]
-[connection signal="pressed" from="SyncTimeButton" to="." method="_on_sync_time_button_pressed"]
-[connection signal="pressed" from="ReadTextControl/SpeakClockTextButton" to="." method="_on_speak_clock_text_button_pressed"]
+[connection signal="time_changed" from="MarginContainer/VBoxContainer/HBoxContainer/Control/Clock" to="." method="_on_clock_time_changed"]
+[connection signal="time_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput" to="." method="_on_digital_clock_input_time_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ReadClockSceneButton" to="." method="_on_read_clock_scene_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/SyncTimeButton" to="." method="_on_sync_time_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 
-[editable path="DigitalClockInput"]
+[editable path="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Control/DigitalClockInput"]

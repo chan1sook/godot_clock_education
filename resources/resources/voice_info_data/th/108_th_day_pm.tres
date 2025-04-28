@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://dd4r2wlhsg7mu"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_mjd0k"]
+[ext_resource type="AudioStream" uid="uid://uvjp8q62e6t2" path="res://assets/voices/th/108_th_day_pm.mp3" id="2_mjd0k"]
+
+[resource]
+script = ExtResource("1_mjd0k")
+voice = ExtResource("2_mjd0k")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

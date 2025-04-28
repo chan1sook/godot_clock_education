@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://dhwggaxc8jscb"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_5gfnu"]
+[ext_resource type="AudioStream" uid="uid://bwnqhg6o10p3j" path="res://assets/voices/th/109_th_day_sunset.mp3" id="2_5gfnu"]
+
+[resource]
+script = ExtResource("1_5gfnu")
+voice = ExtResource("2_5gfnu")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

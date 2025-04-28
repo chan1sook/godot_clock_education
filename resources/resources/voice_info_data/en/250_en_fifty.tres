@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://c2e2rkd4e8iay"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_mqngk"]
+[ext_resource type="AudioStream" uid="uid://ccfqf71v3d2ka" path="res://assets/voices/en/250_en_fifty.mp3" id="2_mqngk"]
+
+[resource]
+script = ExtResource("1_mqngk")
+voice = ExtResource("2_mqngk")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

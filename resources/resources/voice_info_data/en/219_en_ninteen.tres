@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://caoh786xnq4mr"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_ckpmk"]
+[ext_resource type="AudioStream" uid="uid://j6q7l74kxp3v" path="res://assets/voices/en/219_en_nineteen.mp3" id="2_ckpmk"]
+
+[resource]
+script = ExtResource("1_ckpmk")
+voice = ExtResource("2_ckpmk")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

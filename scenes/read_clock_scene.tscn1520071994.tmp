@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0v80dmnttuey"]
+
+[ext_resource type="Script" uid="uid://doku8gfep5fbt" path="res://scenes/read_clock_scene.gd" id="1_ukfx6"]
+[ext_resource type="PackedScene" uid="uid://b2vgvwso01wcj" path="res://resources/ui/chalkboard_background.tscn" id="1_yk022"]
+[ext_resource type="PackedScene" uid="uid://ef68ge1tpdju" path="res://resources/components/clock_voice_playback.tscn" id="2_hfvfi"]
+[ext_resource type="PackedScene" uid="uid://ctvrf3rxaiyc1" path="res://resources/ui/back_button.tscn" id="2_mcyiv"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="2_u66ki"]
+[ext_resource type="PackedScene" uid="uid://qwu0kt3a0fcv" path="res://resources/components/read_clock_node.tscn" id="4_hhuo6"]
+[ext_resource type="Script" uid="uid://ck54ryok8fk06" path="res://resources/resources/clock_time_to_read_text/clock_time_to_read_thai_text.gd" id="6_ktj46"]
+[ext_resource type="Script" uid="uid://b4q11eaoickxv" path="res://resources/resources/clock_time_to_read_text/clock_time_to_read_thai_text_informal.gd" id="7_haejv"]
+[ext_resource type="Script" uid="uid://pol33ap5qexp" path="res://resources/resources/clock_time_to_read_text/clock_time_to_read_informal.gd" id="8_kgyi3"]
+
+[sub_resource type="Resource" id="Resource_haejv"]
+script = ExtResource("6_ktj46")
+metadata/_custom_type_script = "uid://ck54ryok8fk06"
+
+[sub_resource type="Resource" id="Resource_kgyi3"]
+script = ExtResource("7_haejv")
+metadata/_custom_type_script = "uid://b4q11eaoickxv"
+
+[sub_resource type="Resource" id="Resource_nuqk0"]
+script = ExtResource("8_kgyi3")
+metadata/_custom_type_script = "uid://pol33ap5qexp"
+
+[node name="ReadClockScene" type="Control" node_paths=PackedStringArray("time_label", "read_clock_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukfx6")
+time_label = NodePath("MarginContainer/VBoxContainer/TimeLabel")
+read_clock_container = NodePath("MarginContainer/VBoxContainer/VBoxContainer")
+metadata/_edit_lock_ = true
+
+[node name="ClockVoicePlayback" parent="." instance=ExtResource("2_hfvfi")]
+
+[node name="Background" parent="." instance=ExtResource("1_yk022")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 72
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 72
+theme_override_constants/margin_bottom = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_u66ki")
+theme_type_variation = &"SceneTitleLabel"
+text = "ReadClockScene.TitleLabel"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_u66ki")
+theme_type_variation = &"SceneTitleLabel"
+theme_override_font_sizes/font_size = 80
+text = "<Value: 8:00>"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ReadClockNodeThai" parent="MarginContainer/VBoxContainer/VBoxContainer" node_paths=PackedStringArray("voice_playback") instance=ExtResource("4_hhuo6")]
+layout_mode = 2
+voice_playback = NodePath("../../../../ClockVoicePlayback")
+clock_time_to_text = SubResource("Resource_haejv")
+
+[node name="ReadClockNodeThaiInformal" parent="MarginContainer/VBoxContainer/VBoxContainer" node_paths=PackedStringArray("voice_playback") instance=ExtResource("4_hhuo6")]
+layout_mode = 2
+voice_playback = NodePath("../../../../ClockVoicePlayback")
+clock_time_to_text = SubResource("Resource_kgyi3")
+
+[node name="ReadClockNode" parent="MarginContainer/VBoxContainer/VBoxContainer" node_paths=PackedStringArray("voice_playback") instance=ExtResource("4_hhuo6")]
+layout_mode = 2
+voice_playback = NodePath("../../../../ClockVoicePlayback")
+
+[node name="ReadClockNodeInformal" parent="MarginContainer/VBoxContainer/VBoxContainer" node_paths=PackedStringArray("voice_playback") instance=ExtResource("4_hhuo6")]
+visible = false
+layout_mode = 2
+voice_playback = NodePath("../../../../ClockVoicePlayback")
+clock_time_to_text = SubResource("Resource_nuqk0")
+
+[node name="BackButton" parent="." instance=ExtResource("2_mcyiv")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 210.0
+offset_bottom = 81.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

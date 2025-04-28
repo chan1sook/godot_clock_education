@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://c6rcb6qhbt701"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_frexd"]
+[ext_resource type="AudioStream" uid="uid://b2rv76mxof2fy" path="res://assets/voices/en/206_en_six.mp3" id="2_frexd"]
+
+[resource]
+script = ExtResource("1_frexd")
+voice = ExtResource("2_frexd")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

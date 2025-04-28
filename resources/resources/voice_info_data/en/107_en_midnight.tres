@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://bsqeutdyjd103"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_hsbny"]
+[ext_resource type="AudioStream" uid="uid://cigcgi1xdfy6r" path="res://assets/voices/en/107_en_midnight.mp3" id="2_hsbny"]
+
+[resource]
+script = ExtResource("1_hsbny")
+voice = ExtResource("2_hsbny")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

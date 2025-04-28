@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://dq8vlaa4f71l5"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_csugx"]
+[ext_resource type="AudioStream" uid="uid://xbvkbn4h7x1m" path="res://assets/voices/th/209_th_nine.mp3" id="2_17xia"]
+
+[resource]
+script = ExtResource("1_csugx")
+voice = ExtResource("2_17xia")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

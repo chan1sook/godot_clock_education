@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://xqjx1qt8nj1p"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_lajoa"]
+[ext_resource type="AudioStream" uid="uid://wwuwsi5xkv7u" path="res://assets/voices/en/207_en_seven.mp3" id="2_lajoa"]
+
+[resource]
+script = ExtResource("1_lajoa")
+voice = ExtResource("2_lajoa")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

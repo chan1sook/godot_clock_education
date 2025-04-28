@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://bvt6xtx42jp3e"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_1vokr"]
+[ext_resource type="AudioStream" uid="uid://d2t2kkq5t2ukv" path="res://assets/voices/th/220_th_twenty.mp3" id="2_1vokr"]
+
+[resource]
+script = ExtResource("1_1vokr")
+voice = ExtResource("2_1vokr")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

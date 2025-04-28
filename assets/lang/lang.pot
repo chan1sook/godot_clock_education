@@ -14,6 +14,8 @@
 # res://resources/ui/question_screens/digital_to_clock_question.tscn
 # res://scenes/test_end_scene.tscn
 # res://extra_translations.gd
+# res://scenes/read_clock_scene.tscn
+# res://resources/components/read_clock_node.gd
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -66,19 +68,11 @@ msgid "ClockPlaygroundScene.TitleLabel"
 msgstr ""
 
 #: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.InformalTextButton"
-msgstr ""
-
-#: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.FormalTextButton"
+msgid "ClockPlaygroundScene.ReadClockSceneButton"
 msgstr ""
 
 #: scenes/clock_playground_scene.tscn
 msgid "ClockPlaygroundScene.SyncTimeButton"
-msgstr ""
-
-#: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.SpeakButton"
 msgstr ""
 
 #: scenes/credit_scene.tscn
@@ -240,4 +234,16 @@ msgstr ""
 
 #: extra_translations.gd
 msgid "TestPrepareScene.AdjustClockInfo"
+msgstr ""
+
+#: scenes/read_clock_scene.tscn
+msgid "ReadClockScene.TitleLabel"
+msgstr ""
+
+#: resources/components/read_clock_node.gd
+msgid "ReadClockScene.ReadButton"
+msgstr ""
+
+#: resources/components/read_clock_node.gd
+msgid "ReadClockScene.ReadingButton"
 msgstr ""

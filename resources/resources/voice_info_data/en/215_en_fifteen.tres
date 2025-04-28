@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://c1t53oudroqmc"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_hvroe"]
+[ext_resource type="AudioStream" uid="uid://bcbc000vc2gh4" path="res://assets/voices/en/215_en_fifteen.mp3" id="2_hvroe"]
+
+[resource]
+script = ExtResource("1_hvroe")
+voice = ExtResource("2_hvroe")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

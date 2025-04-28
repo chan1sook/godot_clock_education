@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://qwu0kt3a0fcv"]
+
+[ext_resource type="Script" uid="uid://brl5nj0hxwre0" path="res://resources/components/read_clock_node.gd" id="1_oxsjm"]
+[ext_resource type="Script" uid="uid://cpv8x8dgoaeri" path="res://resources/resources/clock_time_to_read_text/clock_time_to_read_text.gd" id="2_yqxc2"]
+[ext_resource type="Script" uid="uid://bt8oofm2jelki" path="res://resources/resources/clock_time_resource.gd" id="3_esxhv"]
+[ext_resource type="Theme" uid="uid://bdlvgyq3apvwb" path="res://resources/game_theme.tres" id="4_cy5jk"]
+[ext_resource type="Texture2D" uid="uid://qvrnrj1hj7wi" path="res://assets/images/lang_flag/en.svg" id="4_yqxc2"]
+
+[sub_resource type="Resource" id="Resource_rq0li"]
+script = ExtResource("2_yqxc2")
+metadata/_custom_type_script = "uid://cpv8x8dgoaeri"
+
+[sub_resource type="Resource" id="Resource_8vbff"]
+script = ExtResource("3_esxhv")
+hour = 8
+minute = 0
+metadata/_custom_type_script = "uid://bt8oofm2jelki"
+
+[node name="ReadClockNode" type="HBoxContainer" node_paths=PackedStringArray("text_label", "read_btn", "flag_node")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 51.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_oxsjm")
+clock_time_to_text = SubResource("Resource_rq0li")
+target_time = SubResource("Resource_8vbff")
+text_label = NodePath("ReadTextLabel")
+read_btn = NodePath("ReadButton")
+flag_node = NodePath("FlagNode")
+
+[node name="FlagNode" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_yqxc2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ReadTextLabel" type="Label" parent="."]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("4_cy5jk")
+text = "<Value:แปดนาฬิกา>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReadButton" type="Button" parent="."]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("4_cy5jk")
+text = "<Value: Read>"
+text_overrun_behavior = 1
+
+[connection signal="pressed" from="ReadButton" to="." method="_on_read_button_pressed"]

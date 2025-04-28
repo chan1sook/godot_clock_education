@@ -58,20 +58,12 @@ msgid "ClockPlaygroundScene.TitleLabel"
 msgstr "เล่นนาฬิกา"
 
 #: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.InformalTextButton"
-msgstr "ภาษาพูด"
-
-#: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.FormalTextButton"
-msgstr "ภาษาเขียน"
+msgid "ClockPlaygroundScene.ReadClockSceneButton"
+msgstr "อ่านนาฬิกา"
 
 #: scenes/clock_playground_scene.tscn
 msgid "ClockPlaygroundScene.SyncTimeButton"
 msgstr "ปรับตามเวลาเครื่อง"
-
-#: scenes/clock_playground_scene.tscn
-msgid "ClockPlaygroundScene.SpeakButton"
-msgstr "อ่านออกเสียง"
 
 #: scenes/credit_scene.tscn
 msgid "CreditScene.TitleLabel"
@@ -233,3 +225,21 @@ msgstr "ตั้งนาฬิกาเข็ม"
 #: extra_translations.gd
 msgid "TestPrepareScene.AdjustClockInfo"
 msgstr "ให้ตั้งนาฬิกาเข็มเรือนให้เวลาตรงกับเรือนแรก"
+
+#: scenes/read_clock_scene.tscn
+msgid "ReadClockScene.TitleLabel"
+msgstr "อ่านนาฬิกา"
+
+#: resources/components/read_clock_node.gd
+msgid "ReadClockScene.ReadButton"
+msgstr "อ่าน"
+
+#: resources/components/read_clock_node.gd
+msgid "ReadClockScene.ReadingButton"
+msgstr "กำลังอ่าน"
+
+#~ msgid "ClockPlaygroundScene.InformalTextButton"
+#~ msgstr "ภาษาพูด"
+
+#~ msgid "ClockPlaygroundScene.FormalTextButton"
+#~ msgstr "ภาษาเขียน"

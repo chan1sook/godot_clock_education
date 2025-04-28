@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://bxfi353ghr3cg"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_o67rt"]
+[ext_resource type="AudioStream" uid="uid://bitjuid8i5nni" path="res://assets/voices/th/104_th_midnight.mp3" id="2_o67rt"]
+
+[resource]
+script = ExtResource("1_o67rt")
+voice = ExtResource("2_o67rt")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

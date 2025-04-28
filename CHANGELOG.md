@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.1
+- Add English Informal Read Language
+- Add English Voices in Read Time Screen
+- Update Thai Voices in Read Time Screen
+- Add Voice Volume Panel and Some UI in Read Time Screen
+- Add Language Flag in Update Setting Screen
+- Language (and volume) config now saved and load every time
+- Fix analog clock interaction not working bug (again)
+
 ## 0.2.0
 - Add English Language
   - Default language is Thai

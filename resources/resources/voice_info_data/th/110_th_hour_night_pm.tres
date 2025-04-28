@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://dcirxg8g4d08n"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_p3hff"]
+[ext_resource type="AudioStream" uid="uid://c57jyqguu0vkd" path="res://assets/voices/th/110_th_hour_night_pm.mp3" id="2_p3hff"]
+
+[resource]
+script = ExtResource("1_p3hff")
+voice = ExtResource("2_p3hff")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

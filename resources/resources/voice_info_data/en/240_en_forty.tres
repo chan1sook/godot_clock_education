@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://dyn8hoxab824y"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_wt8hy"]
+[ext_resource type="AudioStream" uid="uid://d3t21e2p4f1ic" path="res://assets/voices/en/240_en_forty.mp3" id="2_wt8hy"]
+
+[resource]
+script = ExtResource("1_wt8hy")
+voice = ExtResource("2_wt8hy")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

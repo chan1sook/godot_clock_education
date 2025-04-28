@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://qf86molk1o0j"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_vpvre"]
+[ext_resource type="AudioStream" uid="uid://bn4kje27lyse1" path="res://assets/voices/en/208_en_eight.mp3" id="2_jxyvf"]
+
+[resource]
+script = ExtResource("1_vpvre")
+voice = ExtResource("2_jxyvf")
+offset_start = 0.1
+offset_end = -0.2
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"

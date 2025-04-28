@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceInfoData" load_steps=3 format=3 uid="uid://prpuehgbxym2"]
+
+[ext_resource type="Script" uid="uid://conlwj2ls8jg8" path="res://resources/classes/voice_info_data.gd" id="1_xkm03"]
+[ext_resource type="AudioStream" uid="uid://bm6nohqhx8lqa" path="res://assets/voices/th/200_th_zero.mp3" id="2_xkm03"]
+
+[resource]
+script = ExtResource("1_xkm03")
+voice = ExtResource("2_xkm03")
+offset_start = 0.15
+offset_end = -0.9
+metadata/_custom_type_script = "uid://conlwj2ls8jg8"
